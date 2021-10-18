@@ -12,7 +12,7 @@ class CompanyTab extends StatelessWidget {
         children: <Widget>[
           SizedBox(height: 25.0),
           Text(
-            "About Company",
+            "Thông tin thêm",
             style: kTitleStyle.copyWith(fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 15.0),
@@ -20,20 +20,23 @@ class CompanyTab extends StatelessWidget {
             children: company!.aboutCompany!
                 .map(
                   (e) => Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Text(
                         "•  ",
                         textAlign: TextAlign.start,
                         style: TextStyle(fontSize: 35.0),
                       ),
-                      Expanded(
-                        child: Text(
-                          "$e\n",
-                          style: kSubtitleStyle.copyWith(
-                            fontWeight: FontWeight.w300,
-                            height: 1.5,
-                            color: Color(0xFF5B5B5B),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 5.0),
+                        child: Expanded(
+                          child: Text(
+                            "$e",
+                            style: kSubtitleStyle.copyWith(
+                              fontWeight: FontWeight.w300,
+                              height: 1.5,
+                              color: Color(0xFF5B5B5B),
+                            ),
                           ),
                         ),
                       ),

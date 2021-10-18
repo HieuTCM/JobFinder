@@ -115,7 +115,7 @@ class JobDetail extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12.0),
                         ),
                         tabs: [
-                          Tab(text: "Mô tá"),
+                          Tab(text: "Mô tả"),
                           Tab(text: "Thông tin"),
                         ],
                       ),

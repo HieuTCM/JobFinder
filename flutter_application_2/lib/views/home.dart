@@ -82,7 +82,7 @@ class Home extends StatelessWidget {
                               color: kBlack,
                             ),
                             border: InputBorder.none,
-                            hintText: "Tìm bàng tên công việc",
+                            hintText: "Tìm theo tên công việc",
                             hintStyle: kSubtitleStyle.copyWith(
                               color: Colors.black38,
                             ),
@@ -133,7 +133,7 @@ class Home extends StatelessWidget {
                           ),
                         );
                       },
-                      child: index == 0
+                      child: (index % 2) == 0
                           ? CompanyCard(company: company)
                           : CompanyCard2(company: company),
                     );

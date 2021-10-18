@@ -8,9 +8,9 @@ class CompanyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 280.0,
+      width: 300.0,
       margin: EdgeInsets.only(right: 15.0),
-      padding: EdgeInsets.all(15.0),
+      padding: EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0),
         color: kBlack,
@@ -75,7 +75,7 @@ class CompanyCard extends StatelessWidget {
           SizedBox(height: 15.0),
           Expanded(
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: company!.tag!
                   .map(
                     (e) => Container(
