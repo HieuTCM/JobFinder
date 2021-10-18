@@ -190,7 +190,6 @@ class _covidTestMenuState extends State<covidTestMenu> {
                           height: 15,
                         ),
                         TextField(
-                          enabled: false,
                           controller: TextEditingController()
                             ..text = dateString.toString(),
                           textAlign: TextAlign.left,

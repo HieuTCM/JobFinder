@@ -5,6 +5,8 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:job/Screens/covid/covidMainScreen.dart';
+import 'package:job/Screens/edu/eduMainScreen.dart';
+import 'package:job/Screens/exp/expMainScreen.dart';
 import 'package:job/Screens/profile/EditProfileBody.dart';
 import 'package:job/Screens/profile/covidPassport.dart';
 import 'package:job/Screens/profile/edu.dart';
@@ -207,7 +209,10 @@ class editProfileMenu extends StatelessWidget {
             height: 15,
           ),
           RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => expMainScreen()));
+            },
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
             textColor: Colors.white,
@@ -274,7 +279,10 @@ class editProfileMenu extends StatelessWidget {
             height: 15,
           ),
           RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => eduMainScreen()));
+            },
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
             textColor: Colors.white,
