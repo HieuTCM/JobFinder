@@ -17,7 +17,7 @@ class LoginScreen extends StatelessWidget {
               alignment: Alignment.centerLeft,
               padding: EdgeInsets.symmetric(horizontal: 40),
               child: Text(
-                "LOGIN ",
+                "ĐĂNG NHẬP",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Color(0xFF2661FA),
@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
               alignment: Alignment.center,
               margin: EdgeInsets.symmetric(horizontal: 40),
               child: TextField(
-                decoration: InputDecoration(labelText: "Username"),
+                decoration: InputDecoration(labelText: "Tài khoản"),
               ),
             ),
             SizedBox(height: size.height * 0.03),
@@ -38,7 +38,7 @@ class LoginScreen extends StatelessWidget {
               alignment: Alignment.center,
               margin: EdgeInsets.symmetric(horizontal: 40),
               child: TextField(
-                decoration: InputDecoration(labelText: "Password"),
+                decoration: InputDecoration(labelText: "Mật khẩu"),
                 obscureText: true,
               ),
             ),
@@ -46,7 +46,7 @@ class LoginScreen extends StatelessWidget {
               alignment: Alignment.centerRight,
               margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
               child: Text(
-                "Forgot your password?",
+                "Quên mật khẩu?",
                 style: TextStyle(fontSize: 12, color: Color(0XFF2661FA)),
               ),
             ),
@@ -75,7 +75,7 @@ class LoginScreen extends StatelessWidget {
                       ])),
                   padding: const EdgeInsets.all(0),
                   child: Text(
-                    "LOGIN",
+                    "ĐĂNG NHẬP",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
@@ -91,7 +91,7 @@ class LoginScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => RegisterScreen()))
                 },
                 child: Text(
-                  "Don't Have an Account? Sign up",
+                  "Chưa có tài khoản? Đăng ký",
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
