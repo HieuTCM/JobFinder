@@ -34,20 +34,23 @@ class DescriptionTab extends StatelessWidget {
             children: company!.jobResponsbilities!
                 .map(
                   (e) => Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Text(
                         "•  ",
                         textAlign: TextAlign.start,
                         style: TextStyle(fontSize: 35.0),
                       ),
-                      Expanded(
-                        child: Text(
-                          "$e\n",
-                          style: kSubtitleStyle.copyWith(
-                            fontWeight: FontWeight.w300,
-                            height: 1.5,
-                            color: Color(0xFF5B5B5B),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 5.0),
+                        child: Expanded(
+                          child: Text(
+                            "$e",
+                            style: kSubtitleStyle.copyWith(
+                              fontWeight: FontWeight.w300,
+                              height: 1.5,
+                              color: Color(0xFF5B5B5B),
+                            ),
                           ),
                         ),
                       ),

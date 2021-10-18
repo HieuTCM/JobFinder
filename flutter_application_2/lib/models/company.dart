@@ -40,10 +40,10 @@ List<Company> companyList = [
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, tháo vát, thân thiện",
-        "Ngoại hình ưa nhìn - Uư tiên nữ"
+        "Ngoại hình ưa nhìn - Ưu tiên nữ"
       ],
       aboutCompany: [
-        "Địa chỉ : 123, Lê Văn Việt, Quân 9",
+        "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
         "E-mail: abc@gmail.com"
       ]),
@@ -64,7 +64,7 @@ List<Company> companyList = [
         "Nhanh nhẹn, siêng năng",
       ],
       aboutCompany: [
-        "Địa chỉ : 123, Lê Văn Việt, Quân 9",
+        "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
         "E-mail: abc@gmail.com"
       ]),
@@ -86,7 +86,7 @@ List<Company> companyList = [
         "Thân thiện, Ngoại hình ưa nhìn",
       ],
       aboutCompany: [
-        "Địa chỉ : 123, Lê Văn Việt, Quân 9",
+        "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
         "E-mail: abc@gmail.com"
       ]),
@@ -109,10 +109,10 @@ List<Company> recentList = [
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, tháo vát, thân thiện",
-        "Ngoại hình ưa nhìn - Uư tiên nữ"
+        "Ngoại hình ưa nhìn - Ưu tiên nữ"
       ],
       aboutCompany: [
-        "Địa chỉ : 123, Lê Văn Việt, Quân 9",
+        "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
         "E-mail: abc@gmail.com"
       ]),
@@ -133,7 +133,7 @@ List<Company> recentList = [
         "Nhanh nhẹn, siêng năng",
       ],
       aboutCompany: [
-        "Địa chỉ : 123, Lê Văn Việt, Quân 9",
+        "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
         "E-mail: abc@gmail.com"
       ]),
@@ -155,7 +155,7 @@ List<Company> recentList = [
         "Thân thiện, Ngoại hình ưa nhìn",
       ],
       aboutCompany: [
-        "Địa chỉ : 123, Lê Văn Việt, Quân 9",
+        "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
         "E-mail: abc@gmail.com"
       ]),

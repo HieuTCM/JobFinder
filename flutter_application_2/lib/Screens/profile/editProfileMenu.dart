@@ -226,6 +226,9 @@ class editProfileMenu extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            height: 25,
+          ),
           //------------------------------------
         ],
       ),
