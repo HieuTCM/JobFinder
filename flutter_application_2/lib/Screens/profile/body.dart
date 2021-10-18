@@ -6,6 +6,8 @@ import 'package:job/Screens/login/login.dart';
 import 'package:job/Screens/profile/editprofile.dart';
 import 'package:job/Screens/profile/profileMenu.dart';
 import 'package:job/Screens/profile/profilePic.dart';
+import 'package:job/Screens/setting/setting.dart';
+import 'package:job/views/notifyList.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -26,8 +28,20 @@ class Body extends StatelessWidget {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => EditProfile()));
             }),
-        ProfileMenu(icon: "assets/bell.svg", text: "Thông Báo", press: () {}),
-        ProfileMenu(icon: "assets/setting.svg", text: "Cài Đặt", press: () {}),
+        ProfileMenu(
+            icon: "assets/bell.svg",
+            text: "Thông Báo",
+            press: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => NotifyList()));
+            }),
+        ProfileMenu(
+            icon: "assets/setting.svg",
+            text: "Cài Đặt",
+            press: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SettingsPage()));
+            }),
         ProfileMenu(
             icon: "assets/logout.svg",
             text: "Đăng Xuất",

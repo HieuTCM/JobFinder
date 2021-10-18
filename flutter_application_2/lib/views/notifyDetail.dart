@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:job/Screens/profile/profile.dart';
-import 'package:job/constants.dart';
-import 'package:job/models/company.dart';
 import 'package:job/models/notify_model.dart';
 import 'package:job/views/home.dart';
-import 'package:job/views/job_detail.dart';
 import 'package:job/views/markPage.dart';
 import 'package:job/views/searchpage.dart';
-import 'package:job/widgets/company_card.dart';
-import 'package:job/widgets/company_card2.dart';
-import 'package:job/widgets/recent_job_card.dart';
 
 class NotifyDetail extends StatelessWidget {
   const NotifyDetail({Key? key, required this.item}) : super(key: key);
