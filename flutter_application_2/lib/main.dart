@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:job/Screens/login/login.dart';
-import 'package:job/views/home.dart';
 
 void main() {
   runApp(MyApp());
