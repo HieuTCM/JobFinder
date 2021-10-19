@@ -17,11 +17,16 @@ class _EditProfileBodyState extends State<EditProfileBody> {
           height: 20,
         ),
         InfoTextBox(
-            textField: "Họ và tên",
-            placeHolderField: "Đặng Hà Trung Tuyển",
-            isPasswordField: false),
+          textField: "Họ và tên",
+          placeHolderField: "Đặng Hà Trung Tuyển",
+          isPasswordField: false,
+          isNumberField: false,
+        ),
         InfoTextBox(
-            textField: "Tuổi", placeHolderField: "18", isPasswordField: false),
+            textField: "Tuổi",
+            placeHolderField: "18",
+            isPasswordField: false,
+            isNumberField: true),
         SizedBox(
           height: 2,
         ),
@@ -67,15 +72,18 @@ class _EditProfileBodyState extends State<EditProfileBody> {
         InfoTextBox(
             textField: "Số điện thoại",
             placeHolderField: "0932981370",
-            isPasswordField: false),
+            isPasswordField: false,
+            isNumberField: true),
         InfoTextBox(
             textField: "E-mail",
             placeHolderField: "trungtuyen00310@gmail.com",
-            isPasswordField: false),
+            isPasswordField: false,
+            isNumberField: false),
         InfoTextBox(
             textField: "Địa chỉ",
             placeHolderField: "123, Lê Văn Việt, Quận 9",
-            isPasswordField: false),
+            isPasswordField: false,
+            isNumberField: false),
         // InfoTextBox(
         //     textField: "Mật khẩu",
         //     placeHolderField: "TuyenAhihi",

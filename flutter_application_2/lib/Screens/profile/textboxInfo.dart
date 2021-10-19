@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class InfoTextBox extends StatefulWidget {
   const InfoTextBox({
@@ -8,9 +9,10 @@ class InfoTextBox extends StatefulWidget {
     required this.textField,
     required this.placeHolderField,
     required this.isPasswordField,
+    required this.isNumberField,
   }) : super(key: key);
   final String textField, placeHolderField;
-  final bool isPasswordField;
+  final bool isPasswordField, isNumberField;
 
   @override
   State<InfoTextBox> createState() => InfoTextBoxState();
@@ -36,6 +38,8 @@ class InfoTextBoxState extends State<InfoTextBox> {
                 baseOffset: widget.placeHolderField.length,
                 extentOffset: widget.placeHolderField.length);
           },
+          keyboardType:
+              widget.isNumberField ? TextInputType.number : TextInputType.text,
           controller: TextEditingController()..text = widget.placeHolderField,
           readOnly: editInfo,
           obscureText: widget.isPasswordField ? showPassword : false,
