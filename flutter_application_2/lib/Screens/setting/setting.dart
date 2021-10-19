@@ -56,9 +56,8 @@ class _SettingsPageState extends State<SettingsPage> {
             SizedBox(
               height: 10,
             ),
-            buildAccountOptionRow(context, "Đổi thông tin"),
             buildAccountOptionRow(context, "Đổi mật khẩu"),
-            buildAccountOptionRow(context, "Mạng xã hội"),
+            buildAccountOptionRow(context, "Liên Kết mạng xã hội"),
             buildAccountOptionRow(context, "Ngôn ngữ và khu vực"),
             buildAccountOptionRow(context, "Quyền riêng tư"),
             buildAccountOptionRow(context, "Hỗ trợ"),

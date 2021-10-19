@@ -5,21 +5,30 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:job/Screens/covid/covidMainScreen.dart';
+import 'package:job/Screens/covid/covidTest.dart';
+import 'package:job/Screens/covid/covidVaccine.dart';
 import 'package:job/Screens/profile/EditProfileBody.dart';
 import 'package:job/Screens/profile/covidPassport.dart';
 import 'package:job/Screens/profile/edu.dart';
 import 'package:job/Screens/profile/exp.dart';
 import 'package:job/Screens/profile/skillMenu.dart';
 import 'package:job/Screens/profile/skillMenu2.dart';
+import 'package:job/constants.dart';
+import 'package:job/views/markPage.dart';
+import 'package:job/views/qrCode.dart';
 
 class editProfileMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    int covidLevel = Random().nextInt(5);
-    int exp = Random().nextInt(2);
-    int edu = Random().nextInt(2);
-    int skill = Random().nextInt(2);
-    print(covidLevel);
+    // int covidLevel = Random().nextInt(5);
+    // int exp = Random().nextInt(2);
+    // int edu = Random().nextInt(2);
+    // int skill = Random().nextInt(2);
+    int covidLevel = 3;
+    int exp = 2;
+    int edu = 2;
+    int skill = 2;
+    //print(covidLevel);
     return SingleChildScrollView(
       physics: BouncingScrollPhysics(),
       padding: EdgeInsets.only(left: 20, top: 25, right: 20),
@@ -51,7 +60,93 @@ class editProfileMenu extends StatelessWidget {
           Container(
             child: EditProfileBody(),
           ),
+          RaisedButton(
+            onPressed: () {},
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            textColor: Colors.white,
+            padding: const EdgeInsets.all(0),
+            child: Container(
+              alignment: Alignment.center,
+              height: 50.0,
+              decoration: new BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  gradient: new LinearGradient(colors: [
+                    Color.fromARGB(255, 255, 136, 34),
+                    Color.fromARGB(255, 255, 177, 41)
+                  ])),
+              padding: const EdgeInsets.all(0),
+              child: Text(
+                "Cập nhật thông tin",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
 //------------------------------------
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            children: [
+              Icon(
+                Icons.person,
+                color: Colors.black,
+              ),
+              SizedBox(
+                width: 8,
+              ),
+              Text(
+                "Giấy xét nghiệm",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+          Divider(
+            height: 15,
+            thickness: 2,
+          ),
+          covidCart(
+              status: "Có giấy xác nhận âm tính",
+              level: "1",
+              fDate: "15/10/2021",
+              sDate: "null"),
+          SizedBox(
+            height: 10,
+          ),
+          RaisedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => covidTest()));
+            },
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            textColor: Colors.white,
+            padding: const EdgeInsets.all(0),
+            child: Container(
+              alignment: Alignment.center,
+              height: 50.0,
+              decoration: new BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  gradient: new LinearGradient(colors: [
+                    Colors.blueAccent,
+                    Colors.blue.shade800,
+                  ])),
+              padding: const EdgeInsets.all(0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      "Cập nhật thông tin giấy xét nghiệm",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
           SizedBox(
             height: 20,
           ),
@@ -73,6 +168,9 @@ class editProfileMenu extends StatelessWidget {
           Divider(
             height: 15,
             thickness: 2,
+          ),
+          SizedBox(
+            height: 10,
           ),
           Container(
             child: covidLevel == 0
@@ -113,12 +211,12 @@ class editProfileMenu extends StatelessWidget {
                                 : null,
           ),
           SizedBox(
-            height: 15,
+            height: 10,
           ),
           RaisedButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => covidMainScreen()));
+                  MaterialPageRoute(builder: (context) => qrCodeView()));
             },
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
@@ -136,7 +234,49 @@ class editProfileMenu extends StatelessWidget {
               padding: const EdgeInsets.all(0),
               child: Row(
                 children: [
-                  SizedBox(width: 20),
+                  Expanded(
+                    child: Text(
+                      "QR code xác nhận tiêm chủng",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Expanded(
+                    child: IconButton(
+                        color: kBlack,
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.qr_code,
+                        )),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          RaisedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => covidVaccine()));
+            },
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0)),
+            textColor: Colors.white,
+            padding: const EdgeInsets.all(0),
+            child: Container(
+              alignment: Alignment.center,
+              height: 50.0,
+              decoration: new BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  gradient: new LinearGradient(colors: [
+                    Colors.blueAccent,
+                    Colors.blue.shade800,
+                  ])),
+              padding: const EdgeInsets.all(0),
+              child: Row(
+                children: [
                   Expanded(
                     child: Text(
                       "Cập nhật thông tin tiêm chủng",

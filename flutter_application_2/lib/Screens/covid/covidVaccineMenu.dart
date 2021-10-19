@@ -105,7 +105,7 @@ class _covidTestVaccineState extends State<covidVaccineMenu> {
                   height: 15,
                 ),
                 Row(children: [
-                  Text("Hình ảnh xét nghiệm",
+                  Text("Giấy xác nhận đã tiêm vacxin",
                       style: kSubtitleStyle.copyWith(
                           color: Colors.black, fontWeight: FontWeight.bold)),
                 ]),
@@ -198,7 +198,7 @@ class _covidTestVaccineState extends State<covidVaccineMenu> {
                       height: 15,
                     ),
                     Row(children: [
-                      Text("Hình ảnh xét nghiệm",
+                      Text("Giấy xác nhận đã tiêm vacxin",
                           style: kSubtitleStyle.copyWith(
                               color: Colors.black,
                               fontWeight: FontWeight.bold)),
@@ -256,7 +256,7 @@ class _covidTestVaccineState extends State<covidVaccineMenu> {
                           height: 15,
                         ),
                         Row(children: [
-                          Text("Hình ảnh xét nghiệm",
+                          Text("Giấy xác nhận đã tiêm vacxin",
                               style: kSubtitleStyle.copyWith(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold)),

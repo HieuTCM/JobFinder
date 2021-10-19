@@ -1,7 +1,9 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:job/Screens/covid/covidVaccineBody.dart';
+import 'package:job/Screens/profile/editprofile.dart';
 import 'package:job/constants.dart';
 
 class covidVaccine extends StatelessWidget {
@@ -19,15 +21,28 @@ class covidVaccine extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          "Báo đã tiêm",
+          "Khai Báo tiêm chủng",
           style: kTitleStyle,
         ),
+        actions: [
+          IconButton(
+              color: kBlack,
+              onPressed: () {
+                getImage();
+              },
+              icon: Icon(
+                Icons.qr_code,
+              )),
+        ],
         centerTitle: true,
       ),
       body: covidVaccineBody(),
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => EditProfile()));
+          },
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           textColor: Colors.white,
@@ -43,7 +58,7 @@ class covidVaccine extends StatelessWidget {
                 ])),
             padding: const EdgeInsets.all(0),
             child: Text(
-              "Gữi kết quả",
+              "Cập Nhật",
               textAlign: TextAlign.center,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
@@ -51,5 +66,10 @@ class covidVaccine extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  final imagePicker = ImagePicker();
+  Future getImage() async {
+    final image = await imagePicker.getImage(source: ImageSource.camera);
   }
 }

@@ -56,13 +56,17 @@ class covidCart extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Text(
-            "Level: $level",
-            style: kSubtitleStyle.copyWith(
-                color: kBlackAccent,
-                fontSize: 24.0,
-                fontWeight: FontWeight.bold),
-          ),
+          (int.parse(level)) == 1
+              ? SizedBox(
+                  height: 1,
+                )
+              : Text(
+                  "Level: $level",
+                  style: kSubtitleStyle.copyWith(
+                      color: kBlackAccent,
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold),
+                ),
           SizedBox(height: 15.0),
           RichText(
             text: TextSpan(

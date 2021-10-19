@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:job/Screens/covid/covidTestBody.dart';
+import 'package:job/Screens/profile/editprofile.dart';
 import 'package:job/constants.dart';
 
 class covidTest extends StatelessWidget {
@@ -27,7 +28,10 @@ class covidTest extends StatelessWidget {
       body: covidTestBody(),
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => EditProfile()));
+          },
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           textColor: Colors.white,
@@ -43,7 +47,7 @@ class covidTest extends StatelessWidget {
                 ])),
             padding: const EdgeInsets.all(0),
             child: Text(
-              "Gữi kết quả",
+              "Cập nhật",
               textAlign: TextAlign.center,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
