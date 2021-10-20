@@ -78,7 +78,7 @@ class _covidTestVaccineState extends State<covidVaccineMenu> {
                   height: 15,
                 ),
                 TextField(
-                  enabled: false,
+                  enabled: true,
                   controller: TextEditingController()
                     ..text = dateString.toString(),
                   textAlign: TextAlign.left,
@@ -135,7 +135,7 @@ class _covidTestVaccineState extends State<covidVaccineMenu> {
                       height: 15,
                     ),
                     TextField(
-                      enabled: false,
+                      enabled: true,
                       controller: TextEditingController()
                         ..text = dateString.toString(),
                       textAlign: TextAlign.left,
@@ -171,7 +171,7 @@ class _covidTestVaccineState extends State<covidVaccineMenu> {
                       height: 15,
                     ),
                     TextField(
-                      enabled: false,
+                      enabled: true,
                       controller: TextEditingController()
                         ..text = dateString2.toString(),
                       textAlign: TextAlign.left,
@@ -229,7 +229,7 @@ class _covidTestVaccineState extends State<covidVaccineMenu> {
                           height: 15,
                         ),
                         TextField(
-                          enabled: false,
+                          enabled: true,
                           controller: TextEditingController()
                             ..text = dateString.toString(),
                           textAlign: TextAlign.left,
