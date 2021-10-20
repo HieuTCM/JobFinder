@@ -27,7 +27,7 @@ class RecentJobCard extends StatelessWidget {
         ),
         title: Text(company!.job!, style: kTitleStyle),
         subtitle: Text(
-          "${company!.companyName} • ${company!.mainCriteria}",
+          "${company!.companyName} • ${company!.mainCriteria} \n  ${company!.sallary}",
         ),
         trailing: Icon(
           Icons.more_vert,

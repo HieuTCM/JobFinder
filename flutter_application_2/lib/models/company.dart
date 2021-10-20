@@ -82,7 +82,7 @@ List<Company> companyList = [
           "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
-        "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 trở lên thuộc ngành ngôn ngữ anh",
+        "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",
         "Thân thiện, Ngoại hình ưa nhìn",
       ],
       aboutCompany: [
@@ -151,7 +151,7 @@ List<Company> recentList = [
           "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
-        "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 trở lên thuộc ngành ngôn ngữ anh",
+        "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",
         "Thân thiện, Ngoại hình ưa nhìn",
       ],
       aboutCompany: [

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:job/Screens/profile/textboxInfo.dart';
 import 'package:job/constants.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -56,11 +57,11 @@ class _SettingsPageState extends State<SettingsPage> {
             SizedBox(
               height: 10,
             ),
-            buildAccountOptionRow(context, "Đổi mật khẩu"),
-            buildAccountOptionRow(context, "Liên Kết mạng xã hội"),
-            buildAccountOptionRow(context, "Ngôn ngữ và khu vực"),
-            buildAccountOptionRow(context, "Quyền riêng tư"),
-            buildAccountOptionRow(context, "Hỗ trợ"),
+            buildAccountOptionRow(context, "Đổi mật khẩu", 1),
+            buildAccountOptionRow(context, "Liên Kết mạng xã hội", 2),
+            buildAccountOptionRow(context, "Ngôn ngữ và khu vực", 3),
+            buildAccountOptionRow(context, "Quyền riêng tư", 4),
+            buildAccountOptionRow(context, "Hỗ trợ", 5),
             SizedBox(
               height: 40,
             ),
@@ -123,9 +124,151 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
-  GestureDetector buildAccountOptionRow(BuildContext context, String title) {
+  bool valueq1 = true;
+  bool valueq2 = false;
+  bool valueq3 = false;
+  GestureDetector buildAccountOptionRow(
+      BuildContext context, String title, int type) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        if (type == 1) {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text(title),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      InfoTextBox(
+                          textField: "Mật khẩu hiện tại",
+                          placeHolderField: "",
+                          isPasswordField: true,
+                          isNumberField: false),
+                      InfoTextBox(
+                          textField: "Mật khẩu mới",
+                          placeHolderField: "",
+                          isPasswordField: true,
+                          isNumberField: false),
+                      InfoTextBox(
+                          textField: "Xác nhận mật khẩu mới",
+                          placeHolderField: "",
+                          isPasswordField: true,
+                          isNumberField: false),
+                    ],
+                  ),
+                  actions: [
+                    FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text("Close")),
+                  ],
+                );
+              });
+        } else if (type == 2) {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text(title),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text('Liên kết với Facebook'),
+                      Text('Liên kết với Instagram'),
+                    ],
+                  ),
+                  actions: [
+                    FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text("Close")),
+                  ],
+                );
+              });
+        } else if (type == 3) {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text(title),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Checkbox(
+                        value: valueq1,
+                        onChanged: (value) => setState(() {
+                          this.valueq1 = value!;
+                          // this.valueq2 = !value;
+                          // this.valueq3 = !value;
+                          ;
+                        }),
+                      ),
+                      Text('Tiếng Việt'),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      Checkbox(
+                        value: valueq2,
+                        onChanged: (value) => setState(() {
+                          this.valueq2 = value!;
+                          // this.valueq1 = !value;
+                          // this.valueq3 = !value;
+                          ;
+                        }),
+                      ),
+                      Text('English'),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      Checkbox(
+                        value: valueq3,
+                        onChanged: (value) => setState(() {
+                          this.valueq3 = value!;
+                          // this.valueq1 = !value;
+                          // this.valueq2 = !value;
+                          ;
+                        }),
+                      ),
+                      Text('日本語'),
+                    ],
+                  ),
+                  actions: [
+                    FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text("Close")),
+                  ],
+                );
+              });
+        } else if (type == 5) {
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return AlertDialog(
+                  title: Text(title),
+                  content: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text('Liên hệ để được hỗ trợ'),
+                      Text('Hotline:  0123456789'),
+                      Text('Email:  abc@gmail.com'),
+                    ],
+                  ),
+                  actions: [
+                    FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text("Close")),
+                  ],
+                );
+              });
+        }
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: Row(
