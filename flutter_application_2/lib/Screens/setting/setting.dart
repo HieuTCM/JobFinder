@@ -58,7 +58,7 @@ class _SettingsPageState extends State<SettingsPage> {
               height: 10,
             ),
             buildAccountOptionRow(context, "Đổi mật khẩu", 1),
-            buildAccountOptionRow(context, "Liên Kết mạng xã hội", 2),
+            buildAccountOptionRow(context, "Liên kết mạng xã hội", 2),
             buildAccountOptionRow(context, "Ngôn ngữ và khu vực", 3),
             buildAccountOptionRow(context, "Quyền riêng tư", 4),
             buildAccountOptionRow(context, "Hỗ trợ", 5),
@@ -162,7 +162,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
-                        child: Text("Close")),
+                        child: Text("Đóng")),
                   ],
                 );
               });
@@ -184,7 +184,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
-                        child: Text("Close")),
+                        child: Text("Đóng")),
                   ],
                 );
               });
@@ -240,7 +240,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
-                        child: Text("Close")),
+                        child: Text("Đóng")),
                   ],
                 );
               });
@@ -263,7 +263,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
-                        child: Text("Close")),
+                        child: Text("Đóng")),
                   ],
                 );
               });
