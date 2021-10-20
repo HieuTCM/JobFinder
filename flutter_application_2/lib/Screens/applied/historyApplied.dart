@@ -4,6 +4,8 @@ import 'package:job/Screens/profile/profile.dart';
 import 'package:job/constants.dart';
 import 'package:job/models/data.dart';
 import 'package:job/views/home.dart';
+import 'package:job/views/markPage.dart';
+import 'package:job/views/searchpage.dart';
 
 class Applications extends StatefulWidget {
   @override
@@ -52,16 +54,19 @@ class _ApplicationsState extends State<Applications> {
               child: IconButton(
                 icon: Icon(Icons.search),
                 tooltip: 'Search',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => searchPage()));
+                },
               ),
             ),
             Expanded(
               child: IconButton(
-                icon: Icon(Icons.history),
+                icon: Icon(Icons.bookmark_border),
                 tooltip: 'History',
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Applications()));
+                      MaterialPageRoute(builder: (context) => markPage()));
                 },
               ),
             ),

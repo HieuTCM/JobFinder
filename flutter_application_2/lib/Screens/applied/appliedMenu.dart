@@ -6,6 +6,7 @@ class appliedMenu extends StatelessWidget {
   final Application application;
 
   const appliedMenu({Key? key, required this.application}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -72,7 +73,7 @@ class appliedMenu extends StatelessWidget {
                 child: Container(
                   height: 45,
                   decoration: BoxDecoration(
-                    color: Colors.grey[200],
+                    color: Colors.grey[300],
                     borderRadius: BorderRadius.all(
                       Radius.circular(10),
                     ),
@@ -83,28 +84,72 @@ class appliedMenu extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
-                        color: application.status == "Opened"
-                            ? Colors.green[500]
-                            : application.status == "Cancelled"
-                                ? Colors.red[500]
-                                : Colors.black,
+                        color: application.status == "Đang chờ"
+                            ? Colors.yellow[700]
+                            : application.status == "Thành Công"
+                                ? Colors.green[500]
+                                : application.status == "Đã Hủy"
+                                    ? Colors.red[500]
+                                    : Colors.black,
                       ),
                     ),
                   ),
                 ),
+              ),
+              SizedBox(
+                width: 5,
               ),
               Expanded(
                 child: Container(
                   child: Center(
-                    child: Text(
-                      r"$" + application.price + "/h",
-                      style: TextStyle(
-                        fontSize: 24,
+                    child: Container(
+                      height: 45,
+                      decoration: BoxDecoration(
+                        color: application.status == "Đang chờ"
+                            ? Colors.red
+                            : Colors.white,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                      ),
+                      child: Center(
+                        child: Text(
+                          application.status == "Đang chờ" ? 'Hủy' : '',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                              color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
+
+              // Expanded(
+              //   child: Container(
+              //     child: Center(
+              //       child: Container(
+              //         height: 45,
+              //         decoration: BoxDecoration(
+              //           color: Colors.grey[300],
+              //           borderRadius: BorderRadius.all(
+              //             Radius.circular(10),
+              //           ),
+              //         ),
+              //         child: Center(
+              //           child: Text(
+              //             'Hủy',
+              //             style: TextStyle(
+              //                 fontWeight: FontWeight.bold,
+              //                 fontSize: 16,
+              //                 color: Colors.red[500]),
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ],

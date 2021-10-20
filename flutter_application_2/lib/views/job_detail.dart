@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job/Screens/applied/historyApplied.dart';
 import 'package:job/models/company.dart';
 import 'package:job/constants.dart';
 import 'package:job/views/company_tab.dart';
@@ -167,7 +168,7 @@ class JobDetail extends StatelessWidget {
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                          MaterialPageRoute(builder: (context) => Applications()));
                     },
                     style: ElevatedButton.styleFrom(
                       primary: kBlack,

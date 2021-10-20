@@ -23,16 +23,14 @@ class Application {
 
 List<Application> getApplications() {
   return <Application>[
-    Application("Flutter UI / UX Designer", "Nike Inc.", "Delivered", "40",
-        "assets/nike.png"),
-    Application(
-        "Product Designer", "Google LLC", "Opened", "60", "assets/google.png"),
-    Application("UI / UX Designer", "Uber Technologies Inc.", "Cancelled", "55",
-        "assets/uber.png"),
-    Application("Lead UI / UX Designer", "Apple Inc.", "Delivered", "80",
-        "assets/apple.png"),
-    Application("Flutter UI Designer", "Amazon Inc.", "Not selected", "60",
-        "assets/amazon.jpg"),
+    Application("Tài xế xe tải", "Công ty XZY - 6Triệu/tháng", "Thành Công", "",
+        "assets/nike-Logo.png"),
+    Application("Nhân Viên bán hàng", "Quán ABC - 5Triệu/tháng", "Đang chờ", "",
+        "assets/nike-Logo.png"),
+    Application("Tài xế xe tải", "Công ty XZY - 6Triệu/tháng", "Đã Hủy", "",
+        "assets/nike-Logo.png"),
+    Application("Tài xế xe tải", "Công ty XZY - 6Triệu/tháng", "Bị Từ chối", "",
+        "assets/nike-Logo.png"),
   ];
 }
 
