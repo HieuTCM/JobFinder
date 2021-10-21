@@ -10,7 +10,7 @@ class appliedMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(24),
+      padding: EdgeInsets.only(top: 24, bottom: 14, right: 10, left: 10),
       margin: EdgeInsets.symmetric(vertical: 4),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -21,6 +21,7 @@ class appliedMenu extends StatelessWidget {
       child: Column(
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 height: 60,
@@ -68,17 +69,19 @@ class appliedMenu extends StatelessWidget {
             height: 16,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
                 child: Container(
                   height: 45,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
-                    ),
-                  ),
-                  child: Center(
+                  // decoration: BoxDecoration(
+                  //   color: Colors.grey[300],
+                  //   borderRadius: BorderRadius.all(
+                  //     Radius.circular(10),
+                  //   ),
+                  // ),
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 12),
                     child: Text(
                       application.status,
                       style: TextStyle(
@@ -86,7 +89,7 @@ class appliedMenu extends StatelessWidget {
                         fontSize: 16,
                         color: application.status == "Đang chờ"
                             ? Colors.yellow[700]
-                            : application.status == "Thành Công"
+                            : application.status == "Đã được chấp nhận"
                                 ? Colors.green[500]
                                 : application.status == "Đã Hủy"
                                     ? Colors.red[500]
@@ -95,9 +98,6 @@ class appliedMenu extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                width: 5,
               ),
               Expanded(
                 child: Container(

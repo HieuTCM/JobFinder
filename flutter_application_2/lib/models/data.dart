@@ -23,12 +23,12 @@ class Application {
 
 List<Application> getApplications() {
   return <Application>[
-    Application("Tài xế xe tải", "Công ty XZY - 6Triệu/tháng", "Thành Công", "",
-        "assets/nike-Logo.png"),
+    Application("Tài xế xe tải", "Công ty XZY - 6Triệu/tháng",
+        "Đã được chấp nhận", "", "assets/nike-Logo.png"),
     Application("Nhân Viên bán hàng", "Quán ABC - 5Triệu/tháng", "Đang chờ", "",
-        "assets/nike-Logo.png"),
+        "assets/uber-logo-redesign_1x.png"),
     Application("Tài xế xe tải", "Công ty XZY - 6Triệu/tháng", "Đã Hủy", "",
-        "assets/nike-Logo.png"),
+        "assets/soundcloud-icon.png"),
     Application("Tài xế xe tải", "Công ty XZY - 6Triệu/tháng", "Bị Từ chối", "",
         "assets/nike-Logo.png"),
   ];
