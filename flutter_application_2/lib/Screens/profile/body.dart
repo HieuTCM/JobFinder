@@ -33,7 +33,7 @@ class Body extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => EditProfile()));
               }),
           ProfileMenu(
-              icon: "assets/bell.svg",
+              icon: "assets/history.svg",
               text: "Lịch sử xin việc",
               press: () {
                 Navigator.push(context,

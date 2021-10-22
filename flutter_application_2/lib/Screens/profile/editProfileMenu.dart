@@ -15,6 +15,7 @@ import 'package:job/Screens/profile/edu.dart';
 import 'package:job/Screens/profile/exp.dart';
 import 'package:job/Screens/profile/skillMenu.dart';
 import 'package:job/Screens/profile/skillMenu2.dart';
+import 'package:job/Screens/skill/skillMainScreen.dart';
 import 'package:job/constants.dart';
 import 'package:job/views/markPage.dart';
 import 'package:job/views/qrCode.dart';
@@ -491,7 +492,10 @@ class editProfileMenu extends StatelessWidget {
             height: 15,
           ),
           RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => skillMainScreen()));
+            },
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10.0)),
             textColor: Colors.white,
