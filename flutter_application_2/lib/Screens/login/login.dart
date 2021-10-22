@@ -40,13 +40,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 margin: EdgeInsets.symmetric(horizontal: 40),
                 child: TextFormField(
                   decoration: InputDecoration(labelText: "Tài khoản *"),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "Vui lòng không được để trống";
-                    } else {
-                      return null;
-                    }
-                  },
+                  // validator: (value) {
+                  //   if (value!.isEmpty) {
+                  //     return "Vui lòng không được để trống";
+                  //   } else {
+                  //     return null;
+                  //   }
+                  // },
                 ),
               ),
               SizedBox(height: size.height * 0.03),
@@ -55,13 +55,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 margin: EdgeInsets.symmetric(horizontal: 40),
                 child: TextFormField(
                   decoration: InputDecoration(labelText: "Mật khẩu *"),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return "Vui lòng không được để trống";
-                    } else {
-                      return null;
-                    }
-                  },
+                  // validator: (value) {
+                  //   if (value!.isEmpty) {
+                  //     return "Vui lòng không được để trống";
+                  //   } else {
+                  //     return null;
+                  //   }
+                  // },
                   obscureText: true,
                 ),
               ),

@@ -284,7 +284,6 @@ class _mngSearchState extends State<mngSearch> {
     'Tiếp thị - Quảng cáo',
     'Tư vấn',
     'CNTT - Phần mềm',
-    'Tư vấn',
     'Giáo dục - Đào tạo',
   ];
   String? job;
