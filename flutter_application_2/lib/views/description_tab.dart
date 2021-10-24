@@ -16,14 +16,40 @@ class DescriptionTab extends StatelessWidget {
             style: kTitleStyle.copyWith(fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 15.0),
-          Text(
-            company!.jobOpportunity!,
-            style: kSubtitleStyle.copyWith(
-              fontWeight: FontWeight.w300,
-              height: 1.5,
-              color: Color(0xFF5B5B5B),
-            ),
+          Column(
+            children: company!.jobOpportunity!
+                .map(
+                  (e) => Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      // Text(
+                      //   "•  ",
+                      //   textAlign: TextAlign.start,
+                      //   style: TextStyle(fontSize: 35.0),
+                      // ),
+                      Expanded(
+                        child: Text(
+                          "-  $e",
+                          style: kSubtitleStyle.copyWith(
+                            fontWeight: FontWeight.w300,
+                            height: 1.5,
+                            color: Color(0xFF5B5B5B),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+                .toList(),
           ),
+          // Text(
+          //   company!.jobOpportunity!,
+          //   style: kSubtitleStyle.copyWith(
+          //     fontWeight: FontWeight.w300,
+          //     height: 1.5,
+          //     color: Color(0xFF5B5B5B),
+          //   ),
+          // ),
           SizedBox(height: 25.0),
           Text(
             "Yêu cầu công việc",

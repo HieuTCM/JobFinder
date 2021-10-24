@@ -6,7 +6,7 @@ class Company {
   final String? sallary;
   final String? image;
   final String? mainCriteria;
-  final String? jobOpportunity;
+  final List<String>? jobOpportunity;
   final List<String>? aboutCompany;
   final List<String>? jobResponsbilities;
   final List<String>? tag;
@@ -30,15 +30,17 @@ List<Company> companyList = [
       companyName: "Cafe ABC",
       job: "Nhân Viên Phục Vụ",
       city: "Lê Văn Việt, Quận 9",
-      sallary: "5Tr/Tháng",
+      sallary: "4-5Tr/Tháng",
       image: "assets/nike-Logo.png",
       tag: [
         "Full Time",
         "Part-time",
       ],
       mainCriteria: "Full Time",
-      jobOpportunity:
-          "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
+      jobOpportunity: [
+        "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
+        "200k/1 ca, 1 ca 6 tiếng",
+      ],
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, tháo vát, thân thiện",
@@ -53,14 +55,16 @@ List<Company> companyList = [
       companyName: "Quán Cơm ABC",
       job: "Bảo vệ giữ xe",
       city: "456, Quang Trung",
-      sallary: "6Tr/Tháng",
+      sallary: "5-6Tr/Tháng",
       image: "assets/uber-logo-redesign_1x.png",
       tag: [
         "Full Time",
       ],
       mainCriteria: "Full Time",
-      jobOpportunity:
-          "Giữ xe cho khách của quán, có thể làm theo ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8h.",
+      jobOpportunity: [
+        "Giữ xe cho khách của quán, có thể làm theo ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8h.",
+        "150k/1 ca",
+      ],
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, siêng năng",
@@ -74,14 +78,16 @@ List<Company> companyList = [
       companyName: "",
       job: "Gia Sư AV",
       city: "Quận Phú Nhuận",
-      sallary: "5Tr/Tháng",
+      sallary: "5-7tr/Tháng",
       image: "assets/soundcloud-icon.png",
       tag: [
         "Part-time",
       ],
       mainCriteria: "Part-time",
-      jobOpportunity:
-          "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
+      jobOpportunity: [
+        "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
+        "100k/ 1 tiếng, một ngày ít nhất 3 tiếng.",
+      ],
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",
@@ -99,15 +105,17 @@ List<Company> recentList = [
       companyName: "Cafe ABC",
       job: "Nhân Viên Phục Vụ",
       city: "Lê Văn Việt, Quận 9",
-      sallary: "5Tr/Tháng",
+      sallary: "4-5Tr/Tháng",
       image: "assets/nike-Logo.png",
       tag: [
         "Full Time",
         "Part-time",
       ],
       mainCriteria: "Full Time",
-      jobOpportunity:
-          "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
+      jobOpportunity: [
+        "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
+        "200k/1 ca, 1 ca 6 tiếng",
+      ],
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, tháo vát, thân thiện",
@@ -122,14 +130,16 @@ List<Company> recentList = [
       companyName: "Quán Cơm ABC",
       job: "Bảo vệ giữ xe",
       city: "456, Quang Trung",
-      sallary: "6Tr/Tháng",
+      sallary: "5-6Tr/Tháng",
       image: "assets/uber-logo-redesign_1x.png",
       tag: [
         "Full Time",
       ],
       mainCriteria: "Full Time",
-      jobOpportunity:
-          "Giữ xe cho khách của quán, có thể làm theo ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8h.",
+      jobOpportunity: [
+        "Giữ xe cho khách của quán, có thể làm theo ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8h.",
+        "150k/1 ca",
+      ],
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, siêng năng",
@@ -143,14 +153,16 @@ List<Company> recentList = [
       companyName: "Trung tâm Gia Sư",
       job: "Gia Sư AV",
       city: "Quận Phú Nhuận",
-      sallary: "5Tr/Tháng",
+      sallary: "4-5Tr/Tháng",
       image: "assets/uber-logo-redesign_1x.png",
       tag: [
         "Part-time",
       ],
       mainCriteria: "Part-time",
-      jobOpportunity:
-          "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
+      jobOpportunity: [
+        "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
+        "100k/ 1 tiếng, một ngày ít nhất 3 tiếng.",
+      ],
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",
@@ -168,15 +180,17 @@ List<Company> recentHistoryList = [
       type: "Đang chờ",
       job: "Nhân Viên Phục Vụ",
       city: "Lê Văn Việt, Quận 9",
-      sallary: "5Tr/Tháng",
+      sallary: "4-5Tr/Tháng",
       image: "assets/nike-Logo.png",
       tag: [
         "Full Time",
         "Part-time",
       ],
       mainCriteria: "Full Time",
-      jobOpportunity:
-          "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
+      jobOpportunity: [
+        "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
+        "200k/1 ca, 1 ca 6 tiếng",
+      ],
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, tháo vát, thân thiện",
@@ -192,14 +206,16 @@ List<Company> recentHistoryList = [
       type: "Thành công",
       job: "Bảo vệ giữ xe",
       city: "456, Quang Trung",
-      sallary: "6Tr/Tháng",
+      sallary: "5-6Tr/Tháng",
       image: "assets/uber-logo-redesign_1x.png",
       tag: [
         "Full Time",
       ],
       mainCriteria: "Full Time",
-      jobOpportunity:
-          "Giữ xe cho khách của quán, có thể làm theo ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8h.",
+      jobOpportunity: [
+        "Giữ xe cho khách của quán, có thể làm theo ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8h.",
+        "150k/1 ca",
+      ],
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, siêng năng",
@@ -214,14 +230,16 @@ List<Company> recentHistoryList = [
       type: "Đã Hủy",
       job: "Gia Sư AV",
       city: "Quận Phú Nhuận",
-      sallary: "5Tr/Tháng",
+      sallary: "5-7Tr/Tháng",
       image: "assets/uber-logo-redesign_1x.png",
       tag: [
         "Part-time",
       ],
       mainCriteria: "Part-time",
-      jobOpportunity:
-          "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
+      jobOpportunity: [
+        "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
+        "100k/ 1 tiếng, một ngày ít nhất 3 tiếng.",
+      ],
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",
@@ -237,14 +255,16 @@ List<Company> recentHistoryList = [
       type: "Bị từ chối",
       job: "Gia Sư AV",
       city: "Quận Phú Nhuận",
-      sallary: "5Tr/Tháng",
+      sallary: "5-7Tr/Tháng",
       image: "assets/uber-logo-redesign_1x.png",
       tag: [
         "Part-time",
       ],
       mainCriteria: "Part-time",
-      jobOpportunity:
-          "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
+      jobOpportunity: [
+        "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
+        "100k/ 1 tiếng, một ngày ít nhất 3 tiếng.",
+      ],
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",
