@@ -72,7 +72,7 @@ class JobDetail extends StatelessWidget {
                     ),
                     SizedBox(height: 15.0),
                     Text(
-                      company!.sallary!,
+                      ('Lương : ' + company!.sallary!),
                       style: kSubtitleStyle,
                     ),
                     SizedBox(height: 15.0),
@@ -167,8 +167,10 @@ class JobDetail extends StatelessWidget {
                   height: 50.0,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Applications()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Applications()));
                     },
                     style: ElevatedButton.styleFrom(
                       primary: kBlack,

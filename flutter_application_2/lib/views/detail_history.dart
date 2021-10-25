@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:job/Screens/applied/historyApplied.dart';
 import 'package:job/models/company.dart';
 import 'package:job/constants.dart';
+import 'package:job/models/notify_model.dart';
 import 'package:job/views/company_tab.dart';
 import 'package:job/views/description_tab.dart';
 import 'package:job/views/home.dart';
 import 'package:job/views/markPage.dart';
+import 'package:job/views/notifyDetail.dart';
 
 class DetailHistory extends StatelessWidget {
   final Company? company;
-  DetailHistory({this.company});
+  final int index;
+  DetailHistory({this.company, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +33,19 @@ class DetailHistory extends StatelessWidget {
           style: kTitleStyle,
         ),
         centerTitle: true,
+        actions: [
+          IconButton(
+              color: kBlack,
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => NotifyDetail(
+                          item: notifyList2[index],
+                        )));
+              },
+              icon: Icon(
+                Icons.notifications,
+              )),
+        ],
       ),
       body: DefaultTabController(
         length: 2,

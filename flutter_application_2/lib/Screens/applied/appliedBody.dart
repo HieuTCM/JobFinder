@@ -27,6 +27,7 @@ class appliedBody extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) => DetailHistory(
                   company: recent,
+                  index: index,
                 ),
               ),
             );

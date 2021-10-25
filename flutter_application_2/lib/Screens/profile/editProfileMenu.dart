@@ -51,7 +51,7 @@ class editProfileMenu extends StatelessWidget {
                 width: 8,
               ),
               Text(
-                "Tài khoản",
+                "Thông tin cá nhân",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ],
