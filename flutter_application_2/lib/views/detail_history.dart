@@ -200,7 +200,7 @@ class DetailHistory extends StatelessWidget {
                     ),
                     child: Text(
                       "${company!.type}" == "Đang chờ"
-                          ? "Hủy Xin việc"
+                          ? "Hủy đơn xin việc"
                           : "${company!.type}" == "Thành công"
                               ? "Xin việc thành công"
                               : "Xin việc",
