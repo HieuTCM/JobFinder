@@ -99,7 +99,7 @@ class JobDetail extends StatelessWidget {
                           )
                           .toList(),
                     ),
-                    SizedBox(height: 30.0),
+                    SizedBox(height: 20.0),
                     Material(
                       color: Colors.white,
                       shape: RoundedRectangleBorder(

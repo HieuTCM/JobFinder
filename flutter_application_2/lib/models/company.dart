@@ -6,7 +6,8 @@ class Company {
   final String? sallary;
   final String? image;
   final String? mainCriteria;
-  final List<String>? jobOpportunity;
+  final String? jobOpportunity;
+  final List<String>? salaryDetail;
   final List<String>? aboutCompany;
   final List<String>? jobResponsbilities;
   final List<String>? tag;
@@ -19,6 +20,7 @@ class Company {
     this.tag,
     this.image,
     this.mainCriteria,
+    this.salaryDetail,
     this.jobOpportunity,
     this.jobResponsbilities,
     this.aboutCompany,
@@ -37,10 +39,13 @@ List<Company> companyList = [
         "Part-time",
       ],
       mainCriteria: "Full Time",
-      jobOpportunity: [
-        "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
-        "200k/1 ca, 1 ca 6 tiếng",
+      salaryDetail: [
+        "Một tuần làm việc 7 ngày, 1 tháng được một 1 nghỉ",
+        "Ca 1 (7h-15h), Ca 2 (15h-23h)",
+        "200.000VND/1 ca, 1 ca 8 tiếng",
       ],
+      jobOpportunity:
+          "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, tháo vát, thân thiện",
@@ -61,10 +66,12 @@ List<Company> companyList = [
         "Full Time",
       ],
       mainCriteria: "Full Time",
-      jobOpportunity: [
-        "Giữ xe cho khách của quán, có thể làm theo ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8h.",
-        "150k/1 ca",
+      salaryDetail: [
+        "Một tuần làm việc 7 ngày, 1 tháng được một 1 nghỉ",
+        "Ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8 tiếng.",
+        "150.000VND/1 ca",
       ],
+      jobOpportunity: "Giữ xe cho khách của quán",
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, siêng năng",
@@ -84,10 +91,13 @@ List<Company> companyList = [
         "Part-time",
       ],
       mainCriteria: "Part-time",
-      jobOpportunity: [
-        "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
-        "100k/ 1 tiếng, một ngày ít nhất 3 tiếng.",
+      salaryDetail: [
+        "Một tuần dạy học 3 ngày",
+        "Một ngày ít nhất 3 tiếng.",
+        "100.000VND/1 tiếng.",
       ],
+      jobOpportunity:
+          "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",
@@ -112,10 +122,13 @@ List<Company> recentList = [
         "Part-time",
       ],
       mainCriteria: "Full Time",
-      jobOpportunity: [
-        "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
-        "200k/1 ca, 1 ca 6 tiếng",
+      salaryDetail: [
+        "Một tuần làm việc 7 ngày, 1 tháng được một 1 nghỉ",
+        "Ca 1 (7h-15h), Ca 2 (15h-23h)",
+        "200.000VND/1 ca, 1 ca 8 tiếng",
       ],
+      jobOpportunity:
+          "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, tháo vát, thân thiện",
@@ -136,10 +149,12 @@ List<Company> recentList = [
         "Full Time",
       ],
       mainCriteria: "Full Time",
-      jobOpportunity: [
-        "Giữ xe cho khách của quán, có thể làm theo ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8h.",
-        "150k/1 ca",
+      salaryDetail: [
+        "Một tuần làm việc 7 ngày, 1 tháng được một 1 nghỉ",
+        "Ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8 tiếng.",
+        "150.000VND/1 ca",
       ],
+      jobOpportunity: "Giữ xe cho khách của quán",
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, siêng năng",
@@ -159,10 +174,13 @@ List<Company> recentList = [
         "Part-time",
       ],
       mainCriteria: "Part-time",
-      jobOpportunity: [
-        "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
-        "100k/ 1 tiếng, một ngày ít nhất 3 tiếng.",
+      salaryDetail: [
+        "Một tuần dạy học 3 ngày",
+        "Một ngày ít nhất 3 tiếng.",
+        "100.000VND/1 tiếng.",
       ],
+      jobOpportunity:
+          "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",
@@ -187,10 +205,13 @@ List<Company> recentHistoryList = [
         "Part-time",
       ],
       mainCriteria: "Full Time",
-      jobOpportunity: [
-        "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
-        "200k/1 ca, 1 ca 6 tiếng",
+      salaryDetail: [
+        "Một tuần làm việc 7 ngày, 1 tháng được một 1 nghỉ",
+        "Ca 1 (7h-15h), Ca 2 (15h-23h)",
+        "200.000VND/1 ca, 1 ca 8 tiếng",
       ],
+      jobOpportunity:
+          "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, tháo vát, thân thiện",
@@ -212,10 +233,12 @@ List<Company> recentHistoryList = [
         "Full Time",
       ],
       mainCriteria: "Full Time",
-      jobOpportunity: [
-        "Giữ xe cho khách của quán, có thể làm theo ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8h.",
-        "150k/1 ca",
+      salaryDetail: [
+        "Một tuần làm việc 7 ngày, 1 tháng được một 1 nghỉ",
+        "Ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8 tiếng.",
+        "150.000VND/1 ca",
       ],
+      jobOpportunity: "Giữ xe cho khách của quán",
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, siêng năng",
@@ -236,10 +259,13 @@ List<Company> recentHistoryList = [
         "Part-time",
       ],
       mainCriteria: "Part-time",
-      jobOpportunity: [
-        "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
-        "100k/ 1 tiếng, một ngày ít nhất 3 tiếng.",
+      salaryDetail: [
+        "Một tuần dạy học 3 ngày",
+        "Một ngày ít nhất 3 tiếng.",
+        "100.000VND/1 tiếng.",
       ],
+      jobOpportunity:
+          "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",
@@ -261,10 +287,13 @@ List<Company> recentHistoryList = [
         "Part-time",
       ],
       mainCriteria: "Part-time",
-      jobOpportunity: [
-        "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
-        "100k/ 1 tiếng, một ngày ít nhất 3 tiếng.",
+      salaryDetail: [
+        "Một tuần dạy học 3 ngày",
+        "Một ngày ít nhất 3 tiếng.",
+        "100.000VND/1 tiếng.",
       ],
+      jobOpportunity:
+          "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
       jobResponsbilities: [
         "Đã tiêm 2 mũi vacxin",
         "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",

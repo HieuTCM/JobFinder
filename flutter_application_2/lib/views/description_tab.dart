@@ -12,24 +12,23 @@ class DescriptionTab extends StatelessWidget {
         children: <Widget>[
           SizedBox(height: 25.0),
           Text(
-            "Mô tả công việc",
+            "Thù lao & thời gian làm việc",
             style: kTitleStyle.copyWith(fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 15.0),
           Column(
-            children: company!.jobOpportunity!
+            children: company!.salaryDetail!
                 .map(
                   (e) => Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      // Text(
-                      //   "•  ",
-                      //   textAlign: TextAlign.start,
-                      //   style: TextStyle(fontSize: 35.0),
-                      // ),
+                      Text(
+                        "•  ",
+                        textAlign: TextAlign.start,
+                        style: TextStyle(fontSize: 35.0),
+                      ),
                       Expanded(
                         child: Text(
-                          "-  $e",
+                          "$e",
                           style: kSubtitleStyle.copyWith(
                             fontWeight: FontWeight.w300,
                             height: 1.5,
@@ -42,20 +41,24 @@ class DescriptionTab extends StatelessWidget {
                 )
                 .toList(),
           ),
-          // Text(
-          //   company!.jobOpportunity!,
-          //   style: kSubtitleStyle.copyWith(
-          //     fontWeight: FontWeight.w300,
-          //     height: 1.5,
-          //     color: Color(0xFF5B5B5B),
-          //   ),
-          // ),
+          SizedBox(height: 25.0),
+          Text(
+            "Mô tả công việc",
+            style: kTitleStyle.copyWith(fontWeight: FontWeight.bold),
+          ),
+          Text(
+            company!.jobOpportunity!,
+            style: kSubtitleStyle.copyWith(
+              fontWeight: FontWeight.w300,
+              height: 1.5,
+              color: Color(0xFF5B5B5B),
+            ),
+          ),
           SizedBox(height: 25.0),
           Text(
             "Yêu cầu công việc",
             style: kTitleStyle.copyWith(fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 15.0),
           Column(
             children: company!.jobResponsbilities!
                 .map(
