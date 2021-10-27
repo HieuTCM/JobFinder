@@ -22,11 +22,11 @@ class DescriptionTab extends StatelessWidget {
           ),
           SizedBox(height: 25.0),
           Text(
-            "Thù lao & thời gian làm việc",
+            "Thù lao",
             style: kTitleStyle.copyWith(fontWeight: FontWeight.bold),
           ),
           Column(
-            children: company!.salaryDetail!
+            children: company!.salaryDescription!
                 .map(
                   (e) => Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -50,6 +50,66 @@ class DescriptionTab extends StatelessWidget {
                   ),
                 )
                 .toList(),
+          ),
+          Text(
+            company!.salaryDetail!,
+            style: kSubtitleStyle.copyWith(
+              fontWeight: FontWeight.w300,
+              height: 1.5,
+              color: Color(0xFF5B5B5B),
+            ),
+          ),
+          SizedBox(height: 25.0),
+          Text(
+            "Lịch làm việc",
+            style: kTitleStyle.copyWith(fontWeight: FontWeight.bold),
+          ),
+          Column(
+            children: company!.workingTime!
+                .map(
+                  (e) => Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "•  ",
+                        textAlign: TextAlign.start,
+                        style: TextStyle(fontSize: 35.0),
+                      ),
+                      Expanded(
+                        child: Text(
+                          "$e",
+                          style: kSubtitleStyle.copyWith(
+                            fontWeight: FontWeight.w300,
+                            height: 1.5,
+                            color: Color(0xFF5B5B5B),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+                .toList(),
+          ),
+          Text(
+            company!.workingTimeDescription!,
+            style: kSubtitleStyle.copyWith(
+              fontWeight: FontWeight.w300,
+              height: 1.5,
+              color: Color(0xFF5B5B5B),
+            ),
+          ),
+          SizedBox(height: 25.0),
+          Text(
+            "Nơi làm việc",
+            style: kTitleStyle.copyWith(fontWeight: FontWeight.bold),
+          ),
+          Text(
+            company!.workingPlace!,
+            style: kSubtitleStyle.copyWith(
+              fontWeight: FontWeight.w300,
+              height: 1.5,
+              color: Color(0xFF5B5B5B),
+            ),
           ),
           SizedBox(height: 25.0),
           Text(
@@ -97,7 +157,20 @@ class DescriptionTab extends StatelessWidget {
                   ),
                 )
                 .toList(),
-          )
+          ),
+          SizedBox(height: 25.0),
+          Text(
+            "Covid Passport",
+            style: kTitleStyle.copyWith(fontWeight: FontWeight.bold),
+          ),
+          Text(
+            company!.covidPassport!,
+            style: kSubtitleStyle.copyWith(
+              fontWeight: FontWeight.w300,
+              height: 1.5,
+              color: Color(0xFF5B5B5B),
+            ),
+          ),
         ],
       ),
     );
