@@ -9,7 +9,12 @@ class Company {
   final String? mainCriteria;
   final String? jobOpportunity;
   final String? employee;
-  final List<String>? salaryDetail;
+  final String? covidPassport;
+  final String? workingPlace;
+  final List<String>? salaryDescription;
+  final String? workingTimeDescription;
+  final List<String>? workingTime;
+  final String? salaryDetail;
   final List<String>? aboutCompany;
   final List<String>? jobResponsbilities;
   final List<String>? tag;
@@ -18,10 +23,15 @@ class Company {
     this.type,
     this.city,
     this.job,
+    this.covidPassport,
     this.companyName,
     this.sallary,
     this.tag,
     this.image,
+    this.salaryDescription,
+    this.workingPlace,
+    this.workingTimeDescription,
+    this.workingTime,
     this.mainCriteria,
     this.employee,
     this.salaryDetail,
@@ -45,18 +55,27 @@ List<Company> companyList = [
       ],
       mainCriteria: "Full Time",
       employee: "15 người",
-      salaryDetail: [
-        "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
-        "Ca 1 (7h-15 ngườih), Ca 2 (15 ngườih-23h)",
-        "200.000VND/1 ca, 1 ca 8 tiếng",
+      workingTime: [
+        "Ca làm: ca 1 7:00-15:00, ca 2 15:00-23:00",
+        "Fulltime: làm việc 7 ngày trong tuần, 1 tuần được 1 ngày nghỉ",
+        "Part-time: làm việc ít nhất 3 ngày trong tuần",
       ],
+      workingTimeDescription:
+          "Bạn có thể linh hoạt chọn ca/ngày làm việc theo thời gian rảnh của mình.",
+      salaryDescription: [
+        "Fulltime: 25.000VND/giờ",
+        "Part-time: 20.000VND/giờ"
+      ],
+      salaryDetail:
+          "Thu nhập thực lãnh(chưa tính thuế TNCN nếu có).\nThanh toán lương vào ngày 5 và 20 hằng tháng.",
       jobOpportunity:
-          "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
+          "Nhân viên phục vụ quán cafe, bưng nước và dọn dẹp bàn ghế.",
       jobResponsbilities: [
-        "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, tháo vát, thân thiện",
         "Ngoại hình ưa nhìn - Ưu tiên nữ"
       ],
+      workingPlace: "Quán Cafe ABC, Số 123, Lê Văn Việt, Quận 9",
+      covidPassport: "Level 3: Đã tiêm 2 mũi vacxin hoặc F0 đã khỏi bệnh.",
       aboutCompany: [
         "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
@@ -74,16 +93,24 @@ List<Company> companyList = [
       ],
       mainCriteria: "Full Time",
       employee: "15 người",
-      salaryDetail: [
-        "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
-        "Ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8 tiếng.",
-        "15 người0.000VND/1 ca",
+      workingTime: [
+        "Ca làm: ca 1 6:00-14:00, ca 2 14:00-22:00.",
+        "Một tuần làm việc 7 ngày, 1 tuần được 1 ngày nghỉ.",
       ],
+      workingTimeDescription:
+          "Bạn có thể linh hoạt chọn ca/ngày làm việc theo thời gian rảnh của mình.",
+      salaryDescription: [
+        "30.000VND/giờ",
+      ],
+      salaryDetail:
+          "Thu nhập thực lãnh(chưa tính thuế TNCN nếu có).\nThanh toán lương vào ngày 10 hằng tháng.",
       jobOpportunity: "Giữ xe cho khách của quán",
       jobResponsbilities: [
-        "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, siêng năng",
       ],
+      workingPlace:
+          "Quán cơm ABC, Số 50, đường Hồ Việt Hương, Hiệp Phú , Quận 9",
+      covidPassport: "Level 3: Đã tiêm 2 mũi vacxin hoặc F0 đã khỏi bệnh.",
       aboutCompany: [
         "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
@@ -101,18 +128,23 @@ List<Company> companyList = [
       ],
       mainCriteria: "Part-time",
       employee: "15 người",
-      salaryDetail: [
-        "Một tuần dạy học 3 ngày",
-        "Một ngày ít nhất 3 tiếng.",
-        "100.000VND/1 tiếng.",
+      workingTime: [
+        "Một tuần dạy học 3 ngày, một ngày ít nhất 3 tiếng",
       ],
+      workingTimeDescription: "Thời gian biểu dạy học do học sinh yêu cầu.",
+      salaryDescription: [
+        "Fulltime: 45.000VND/giờ",
+      ],
+      salaryDetail:
+          "Thu nhập thực lãnh(chưa tính thuế TNCN nếu có).\nThanh toán lương vào ngày 15 hằng tháng.",
       jobOpportunity:
           "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
       jobResponsbilities: [
-        "Đã tiêm 2 mũi vacxin",
-        "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",
+        "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \ntrở lên thuộc ngành ngôn ngữ anh",
         "Thân thiện, Ngoại hình ưa nhìn",
       ],
+      workingPlace: "Tùy thuộc vào địa chỉ của học sinh",
+      covidPassport: "Level 3: Đã tiêm 2 mũi vacxin hoặc F0 đã khỏi bệnh.",
       aboutCompany: [
         "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
@@ -134,18 +166,27 @@ List<Company> recentList = [
       ],
       mainCriteria: "Full Time",
       employee: "15 người",
-      salaryDetail: [
-        "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
-        "Ca 1 (7h-15 ngườih), Ca 2 (15 ngườih-23h)",
-        "200.000VND/1 ca, 1 ca 8 tiếng",
+      workingTime: [
+        "Ca làm: ca 1 7:00-15:00, ca 2 15:00-23:00",
+        "Fulltime: làm việc 7 ngày trong tuần, 1 tuần được 1 ngày nghỉ",
+        "Part-time: làm việc ít nhất 3 ngày trong tuần",
       ],
+      workingTimeDescription:
+          "Bạn có thể linh hoạt chọn ca/ngày làm việc theo thời gian rảnh của mình.",
+      salaryDescription: [
+        "Fulltime: 25.000VND/giờ",
+        "Part-time: 20.000VND/giờ"
+      ],
+      salaryDetail:
+          "Thu nhập thực lãnh(chưa tính thuế TNCN nếu có).\nThanh toán lương vào ngày 5 và 20 hằng tháng.",
       jobOpportunity:
-          "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
+          "Nhân viên phục vụ quán cafe, bưng nước và dọn dẹp bàn ghế.",
       jobResponsbilities: [
-        "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, tháo vát, thân thiện",
         "Ngoại hình ưa nhìn - Ưu tiên nữ"
       ],
+      workingPlace: "Quán Cafe ABC, Số 123, Lê Văn Việt, Quận 9",
+      covidPassport: "Level 3: Đã tiêm 2 mũi vacxin hoặc F0 đã khỏi bệnh.",
       aboutCompany: [
         "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
@@ -163,16 +204,24 @@ List<Company> recentList = [
       ],
       mainCriteria: "Full Time",
       employee: "15 người",
-      salaryDetail: [
-        "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
-        "Ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8 tiếng.",
-        "15 người0.000VND/1 ca",
+      workingTime: [
+        "Ca làm: ca 1 6:00-14:00, ca 2 14:00-22:00.",
+        "Một tuần làm việc 7 ngày, 1 tuần được 1 ngày nghỉ.",
       ],
+      workingTimeDescription:
+          "Bạn có thể linh hoạt chọn ca/ngày làm việc theo thời gian rảnh của mình.",
+      salaryDescription: [
+        "30.000VND/giờ",
+      ],
+      salaryDetail:
+          "Thu nhập thực lãnh(chưa tính thuế TNCN nếu có).\nThanh toán lương vào ngày 10 hằng tháng.",
       jobOpportunity: "Giữ xe cho khách của quán",
       jobResponsbilities: [
-        "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, siêng năng",
       ],
+      workingPlace:
+          "Quán cơm ABC, Số 50, đường Hồ Việt Hương, Hiệp Phú , Quận 9",
+      covidPassport: "Level 3: Đã tiêm 2 mũi vacxin hoặc F0 đã khỏi bệnh.",
       aboutCompany: [
         "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
@@ -190,18 +239,23 @@ List<Company> recentList = [
       ],
       mainCriteria: "Part-time",
       employee: "15 người",
-      salaryDetail: [
-        "Một tuần dạy học 3 ngày",
-        "Một ngày ít nhất 3 tiếng.",
-        "100.000VND/1 tiếng.",
+      workingTime: [
+        "Một tuần dạy học 3 ngày, một ngày ít nhất 3 tiếng",
       ],
+      workingTimeDescription: "Thời gian biểu dạy học do học sinh yêu cầu.",
+      salaryDescription: [
+        "Fulltime: 45.000VND/giờ",
+      ],
+      salaryDetail:
+          "Thu nhập thực lãnh(chưa tính thuế TNCN nếu có).\nThanh toán lương vào ngày 15 hằng tháng.",
       jobOpportunity:
           "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
       jobResponsbilities: [
-        "Đã tiêm 2 mũi vacxin",
-        "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",
+        "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \ntrở lên thuộc ngành ngôn ngữ anh",
         "Thân thiện, Ngoại hình ưa nhìn",
       ],
+      workingPlace: "Tùy thuộc vào địa chỉ của học sinh",
+      covidPassport: "Level 3: Đã tiêm 2 mũi vacxin hoặc F0 đã khỏi bệnh.",
       aboutCompany: [
         "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
@@ -223,18 +277,27 @@ List<Company> recentHistoryList = [
       ],
       mainCriteria: "Full Time",
       employee: "15 người",
-      salaryDetail: [
-        "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
-        "Ca 1 (7h-15 ngườih), Ca 2 (15 ngườih-23h)",
-        "200.000VND/1 ca, 1 ca 8 tiếng",
+      workingTime: [
+        "Ca làm: ca 1 7:00-15:00, ca 2 15:00-23:00",
+        "Fulltime: làm việc 7 ngày trong tuần, 1 tuần được 1 ngày nghỉ",
+        "Part-time: làm việc ít nhất 3 ngày trong tuần",
       ],
+      workingTimeDescription:
+          "Bạn có thể linh hoạt chọn ca/ngày làm việc theo thời gian rảnh của mình.",
+      salaryDescription: [
+        "Fulltime: 25.000VND/giờ",
+        "Part-time: 20.000VND/giờ"
+      ],
+      salaryDetail:
+          "Thu nhập thực lãnh(chưa tính thuế TNCN nếu có).\nThanh toán lương vào ngày 5 và 20 hằng tháng.",
       jobOpportunity:
-          "Nhân viên phục vụ quán cafe, có thể chọn làm theo giờ hoặc theo ca.",
+          "Nhân viên phục vụ quán cafe, bưng nước và dọn dẹp bàn ghế.",
       jobResponsbilities: [
-        "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, tháo vát, thân thiện",
         "Ngoại hình ưa nhìn - Ưu tiên nữ"
       ],
+      workingPlace: "Quán Cafe ABC, Số 123, Lê Văn Việt, Quận 9",
+      covidPassport: "Level 3: Đã tiêm 2 mũi vacxin hoặc F0 đã khỏi bệnh.",
       aboutCompany: [
         "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
@@ -253,16 +316,24 @@ List<Company> recentHistoryList = [
       ],
       mainCriteria: "Full Time",
       employee: "15 người",
-      salaryDetail: [
-        "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
-        "Ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8 tiếng.",
-        "15 người0.000VND/1 ca",
+      workingTime: [
+        "Ca làm: ca 1 6:00-14:00, ca 2 14:00-22:00.",
+        "Một tuần làm việc 7 ngày, 1 tuần được 1 ngày nghỉ.",
       ],
+      workingTimeDescription:
+          "Bạn có thể linh hoạt chọn ca/ngày làm việc theo thời gian rảnh của mình.",
+      salaryDescription: [
+        "30.000VND/giờ",
+      ],
+      salaryDetail:
+          "Thu nhập thực lãnh(chưa tính thuế TNCN nếu có).\nThanh toán lương vào ngày 10 hằng tháng.",
       jobOpportunity: "Giữ xe cho khách của quán",
       jobResponsbilities: [
-        "Đã tiêm 2 mũi vacxin",
         "Nhanh nhẹn, siêng năng",
       ],
+      workingPlace:
+          "Quán cơm ABC, Số 50, đường Hồ Việt Hương, Hiệp Phú , Quận 9",
+      covidPassport: "Level 3: Đã tiêm 2 mũi vacxin hoặc F0 đã khỏi bệnh.",
       aboutCompany: [
         "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
@@ -281,18 +352,23 @@ List<Company> recentHistoryList = [
       ],
       mainCriteria: "Part-time",
       employee: "15 người",
-      salaryDetail: [
-        "Một tuần dạy học 3 ngày",
-        "Một ngày ít nhất 3 tiếng.",
-        "100.000VND/1 tiếng.",
+      workingTime: [
+        "Một tuần dạy học 3 ngày, một ngày ít nhất 3 tiếng",
       ],
+      workingTimeDescription: "Thời gian biểu dạy học do học sinh yêu cầu.",
+      salaryDescription: [
+        "Fulltime: 45.000VND/giờ",
+      ],
+      salaryDetail:
+          "Thu nhập thực lãnh(chưa tính thuế TNCN nếu có).\nThanh toán lương vào ngày 15 hằng tháng.",
       jobOpportunity:
           "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
       jobResponsbilities: [
-        "Đã tiêm 2 mũi vacxin",
-        "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",
+        "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \ntrở lên thuộc ngành ngôn ngữ anh",
         "Thân thiện, Ngoại hình ưa nhìn",
       ],
+      workingPlace: "Tùy thuộc vào địa chỉ của học sinh",
+      covidPassport: "Level 3: Đã tiêm 2 mũi vacxin hoặc F0 đã khỏi bệnh.",
       aboutCompany: [
         "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
@@ -311,18 +387,23 @@ List<Company> recentHistoryList = [
       ],
       mainCriteria: "Part-time",
       employee: "15 người",
-      salaryDetail: [
-        "Một tuần dạy học 3 ngày",
-        "Một ngày ít nhất 3 tiếng.",
-        "100.000VND/1 tiếng.",
+      workingTime: [
+        "Một tuần dạy học 3 ngày, một ngày ít nhất 3 tiếng",
       ],
+      workingTimeDescription: "Thời gian biểu dạy học do học sinh yêu cầu.",
+      salaryDescription: [
+        "Fulltime: 45.000VND/giờ",
+      ],
+      salaryDetail:
+          "Thu nhập thực lãnh(chưa tính thuế TNCN nếu có).\nThanh toán lương vào ngày 15 hằng tháng.",
       jobOpportunity:
           "Gia sự dạy AV cho học sinh cấp 2. Có thể dạy tại nhà hoặc Online, thời khóa biểu do học sinh yêu cầu",
       jobResponsbilities: [
-        "Đã tiêm 2 mũi vacxin",
-        "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \n trở lên thuộc ngành ngôn ngữ anh",
+        "Có bằng sư phạm ngành AV hoặc sinh viên năm 3 \ntrở lên thuộc ngành ngôn ngữ anh",
         "Thân thiện, Ngoại hình ưa nhìn",
       ],
+      workingPlace: "Tùy thuộc vào địa chỉ của học sinh",
+      covidPassport: "Level 3: Đã tiêm 2 mũi vacxin hoặc F0 đã khỏi bệnh.",
       aboutCompany: [
         "Địa chỉ : 123, Lê Văn Việt, Quận 9",
         "Điện thoại : 012121212",
