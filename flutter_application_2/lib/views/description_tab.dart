@@ -12,6 +12,11 @@ class DescriptionTab extends StatelessWidget {
         children: <Widget>[
           SizedBox(height: 25.0),
           Text(
+            "Hạn nộp hồ sơ :  \t" + company!.time!,
+            style: kTitleStyle.copyWith(fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 25.0),
+          Text(
             "Thù lao & thời gian làm việc",
             style: kTitleStyle.copyWith(fontWeight: FontWeight.bold),
           ),

@@ -2,6 +2,7 @@ class Company {
   final String? companyName;
   final String? type;
   final String? job;
+  final String? time;
   final String? city;
   final String? sallary;
   final String? image;
@@ -12,6 +13,7 @@ class Company {
   final List<String>? jobResponsbilities;
   final List<String>? tag;
   Company({
+    this.time,
     this.type,
     this.city,
     this.job,
@@ -30,6 +32,7 @@ class Company {
 List<Company> companyList = [
   Company(
       companyName: "Cafe ABC",
+      time: "30 - 12 - 2021",
       job: "Nhân Viên Phục Vụ",
       city: "Lê Văn Việt, Quận 9",
       sallary: "4-5Tr/Tháng",
@@ -40,7 +43,7 @@ List<Company> companyList = [
       ],
       mainCriteria: "Full Time",
       salaryDetail: [
-        "Một tuần làm việc 7 ngày, 1 tháng được một 1 nghỉ",
+        "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
         "Ca 1 (7h-15h), Ca 2 (15h-23h)",
         "200.000VND/1 ca, 1 ca 8 tiếng",
       ],
@@ -58,6 +61,7 @@ List<Company> companyList = [
       ]),
   Company(
       companyName: "Quán Cơm ABC",
+      time: "30 - 12 - 2021",
       job: "Bảo vệ giữ xe",
       city: "456, Quang Trung",
       sallary: "5-6Tr/Tháng",
@@ -67,7 +71,7 @@ List<Company> companyList = [
       ],
       mainCriteria: "Full Time",
       salaryDetail: [
-        "Một tuần làm việc 7 ngày, 1 tháng được một 1 nghỉ",
+        "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
         "Ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8 tiếng.",
         "150.000VND/1 ca",
       ],
@@ -82,7 +86,8 @@ List<Company> companyList = [
         "E-mail: abc@gmail.com"
       ]),
   Company(
-      companyName: "",
+      companyName: "Trung tầm gia sư",
+      time: "30 - 12 - 2021",
       job: "Gia Sư AV",
       city: "Quận Phú Nhuận",
       sallary: "5-7tr/Tháng",
@@ -113,6 +118,7 @@ List<Company> companyList = [
 List<Company> recentList = [
   Company(
       companyName: "Cafe ABC",
+      time: "30 - 12 - 2021",
       job: "Nhân Viên Phục Vụ",
       city: "Lê Văn Việt, Quận 9",
       sallary: "4-5Tr/Tháng",
@@ -123,7 +129,7 @@ List<Company> recentList = [
       ],
       mainCriteria: "Full Time",
       salaryDetail: [
-        "Một tuần làm việc 7 ngày, 1 tháng được một 1 nghỉ",
+        "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
         "Ca 1 (7h-15h), Ca 2 (15h-23h)",
         "200.000VND/1 ca, 1 ca 8 tiếng",
       ],
@@ -141,6 +147,7 @@ List<Company> recentList = [
       ]),
   Company(
       companyName: "Quán Cơm ABC",
+      time: "30 - 12 - 2021",
       job: "Bảo vệ giữ xe",
       city: "456, Quang Trung",
       sallary: "5-6Tr/Tháng",
@@ -150,7 +157,7 @@ List<Company> recentList = [
       ],
       mainCriteria: "Full Time",
       salaryDetail: [
-        "Một tuần làm việc 7 ngày, 1 tháng được một 1 nghỉ",
+        "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
         "Ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8 tiếng.",
         "150.000VND/1 ca",
       ],
@@ -166,6 +173,7 @@ List<Company> recentList = [
       ]),
   Company(
       companyName: "Trung tâm Gia Sư",
+      time: "30 - 12 - 2021",
       job: "Gia Sư AV",
       city: "Quận Phú Nhuận",
       sallary: "4-5Tr/Tháng",
@@ -195,6 +203,7 @@ List<Company> recentList = [
 List<Company> recentHistoryList = [
   Company(
       companyName: "Cafe ABC",
+      time: "30 - 12 - 2021",
       type: "Đang chờ",
       job: "Nhân Viên Phục Vụ",
       city: "Lê Văn Việt, Quận 9",
@@ -206,7 +215,7 @@ List<Company> recentHistoryList = [
       ],
       mainCriteria: "Full Time",
       salaryDetail: [
-        "Một tuần làm việc 7 ngày, 1 tháng được một 1 nghỉ",
+        "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
         "Ca 1 (7h-15h), Ca 2 (15h-23h)",
         "200.000VND/1 ca, 1 ca 8 tiếng",
       ],
@@ -224,6 +233,7 @@ List<Company> recentHistoryList = [
       ]),
   Company(
       companyName: "Quán Cơm ABC",
+      time: "30 - 12 - 2021",
       type: "Thành công",
       job: "Bảo vệ giữ xe",
       city: "456, Quang Trung",
@@ -234,7 +244,7 @@ List<Company> recentHistoryList = [
       ],
       mainCriteria: "Full Time",
       salaryDetail: [
-        "Một tuần làm việc 7 ngày, 1 tháng được một 1 nghỉ",
+        "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
         "Ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8 tiếng.",
         "150.000VND/1 ca",
       ],
@@ -250,6 +260,7 @@ List<Company> recentHistoryList = [
       ]),
   Company(
       companyName: "Trung tâm Gia Sư",
+      time: "30 - 12 - 2021",
       type: "Đã Hủy",
       job: "Gia Sư AV",
       city: "Quận Phú Nhuận",
@@ -278,6 +289,7 @@ List<Company> recentHistoryList = [
       ]),
   Company(
       companyName: "Trung tâm Gia Sư",
+      time: "30 - 12 - 2021",
       type: "Bị từ chối",
       job: "Gia Sư AV",
       city: "Quận Phú Nhuận",

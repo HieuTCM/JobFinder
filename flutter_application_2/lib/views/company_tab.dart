@@ -12,7 +12,7 @@ class CompanyTab extends StatelessWidget {
         children: <Widget>[
           SizedBox(height: 25.0),
           Text(
-            "Thông tin thêm",
+            "Thông tin liên lạc",
             style: kTitleStyle.copyWith(fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 15.0),
