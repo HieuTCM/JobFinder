@@ -9,6 +9,7 @@ import 'package:job/Screens/profile/profile.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:job/views/markPage.dart';
 import 'package:job/views/searchpage.dart';
+import 'package:job/widgets/bottomAppbar.dart';
 
 class mngSearch extends StatefulWidget {
   @override
@@ -211,54 +212,7 @@ class _mngSearchState extends State<mngSearch> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: Color.fromARGB(255, 255, 160, 0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Expanded(
-              child: IconButton(
-                icon: Icon(Icons.home),
-                tooltip: 'Home',
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Home()));
-                },
-              ),
-            ),
-            Expanded(
-              child: IconButton(
-                icon: Icon(Icons.search),
-                tooltip: 'Search',
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => searchPage()));
-                },
-              ),
-            ),
-            Expanded(
-              child: IconButton(
-                icon: Icon(Icons.bookmark_border),
-                tooltip: 'History',
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => markPage()));
-                },
-              ),
-            ),
-            Expanded(
-              child: IconButton(
-                icon: Icon(Icons.account_box),
-                tooltip: 'Account',
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ProfileScreen()));
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: bottombar(),
     );
   }
 

@@ -4,6 +4,7 @@ import 'package:job/models/notify_model.dart';
 import 'package:job/views/home.dart';
 import 'package:job/views/markPage.dart';
 import 'package:job/views/searchpage.dart';
+import 'package:job/widgets/bottomAppbar.dart';
 
 class NotifyDetail extends StatelessWidget {
   const NotifyDetail({Key? key, required this.item}) : super(key: key);
@@ -69,54 +70,7 @@ class NotifyDetail extends StatelessWidget {
               ],
             ),
           )),
-      bottomNavigationBar: BottomAppBar(
-        color: Color.fromARGB(255, 255, 160, 0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Expanded(
-              child: IconButton(
-                icon: Icon(Icons.home),
-                tooltip: 'Home',
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Home()));
-                },
-              ),
-            ),
-            Expanded(
-              child: IconButton(
-                icon: Icon(Icons.search),
-                tooltip: 'Search',
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => searchPage()));
-                },
-              ),
-            ),
-            Expanded(
-              child: IconButton(
-                icon: Icon(Icons.bookmark_border),
-                tooltip: 'History',
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => markPage()));
-                },
-              ),
-            ),
-            Expanded(
-              child: IconButton(
-                icon: Icon(Icons.account_box),
-                tooltip: 'Account',
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ProfileScreen()));
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
+      bottomNavigationBar: bottombar(),
     );
   }
 }

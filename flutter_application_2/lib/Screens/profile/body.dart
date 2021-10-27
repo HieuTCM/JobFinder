@@ -8,6 +8,7 @@ import 'package:job/Screens/profile/editprofile.dart';
 import 'package:job/Screens/profile/profileMenu.dart';
 import 'package:job/Screens/profile/profilePic.dart';
 import 'package:job/Screens/setting/setting.dart';
+import 'package:job/views/markPage.dart';
 import 'package:job/views/notifyList.dart';
 
 class Body extends StatelessWidget {
@@ -33,11 +34,11 @@ class Body extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => EditProfile()));
               }),
           ProfileMenu(
-              icon: "assets/history.svg",
-              text: "Lịch sử xin việc",
+              icon: "assets/bookmark.svg",
+              text: "Danh sách lưu trữ",
               press: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Applications()));
+                    MaterialPageRoute(builder: (context) => markPage()));
               }),
           ProfileMenu(
               icon: "assets/bell.svg",

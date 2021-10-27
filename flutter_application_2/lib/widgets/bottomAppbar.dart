@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:job/Screens/applied/historyApplied.dart';
 import 'package:job/Screens/profile/profile.dart';
 import 'package:job/views/home.dart';
 import 'package:job/views/markPage.dart';
@@ -35,11 +36,11 @@ class bottombar extends StatelessWidget {
           ),
           Expanded(
             child: IconButton(
-              icon: Icon(Icons.bookmark_border),
+              icon: Icon(Icons.history),
               tooltip: 'History',
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => markPage()));
+                    MaterialPageRoute(builder: (context) => Applications()));
               },
             ),
           ),
