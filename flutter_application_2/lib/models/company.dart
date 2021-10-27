@@ -8,6 +8,7 @@ class Company {
   final String? image;
   final String? mainCriteria;
   final String? jobOpportunity;
+  final String? employee;
   final List<String>? salaryDetail;
   final List<String>? aboutCompany;
   final List<String>? jobResponsbilities;
@@ -22,6 +23,7 @@ class Company {
     this.tag,
     this.image,
     this.mainCriteria,
+    this.employee,
     this.salaryDetail,
     this.jobOpportunity,
     this.jobResponsbilities,
@@ -42,9 +44,10 @@ List<Company> companyList = [
         "Part-time",
       ],
       mainCriteria: "Full Time",
+      employee: "15 người",
       salaryDetail: [
         "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
-        "Ca 1 (7h-15h), Ca 2 (15h-23h)",
+        "Ca 1 (7h-15 ngườih), Ca 2 (15 ngườih-23h)",
         "200.000VND/1 ca, 1 ca 8 tiếng",
       ],
       jobOpportunity:
@@ -70,10 +73,11 @@ List<Company> companyList = [
         "Full Time",
       ],
       mainCriteria: "Full Time",
+      employee: "15 người",
       salaryDetail: [
         "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
         "Ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8 tiếng.",
-        "150.000VND/1 ca",
+        "15 người0.000VND/1 ca",
       ],
       jobOpportunity: "Giữ xe cho khách của quán",
       jobResponsbilities: [
@@ -96,6 +100,7 @@ List<Company> companyList = [
         "Part-time",
       ],
       mainCriteria: "Part-time",
+      employee: "15 người",
       salaryDetail: [
         "Một tuần dạy học 3 ngày",
         "Một ngày ít nhất 3 tiếng.",
@@ -128,9 +133,10 @@ List<Company> recentList = [
         "Part-time",
       ],
       mainCriteria: "Full Time",
+      employee: "15 người",
       salaryDetail: [
         "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
-        "Ca 1 (7h-15h), Ca 2 (15h-23h)",
+        "Ca 1 (7h-15 ngườih), Ca 2 (15 ngườih-23h)",
         "200.000VND/1 ca, 1 ca 8 tiếng",
       ],
       jobOpportunity:
@@ -156,10 +162,11 @@ List<Company> recentList = [
         "Full Time",
       ],
       mainCriteria: "Full Time",
+      employee: "15 người",
       salaryDetail: [
         "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
         "Ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8 tiếng.",
-        "150.000VND/1 ca",
+        "15 người0.000VND/1 ca",
       ],
       jobOpportunity: "Giữ xe cho khách của quán",
       jobResponsbilities: [
@@ -182,6 +189,7 @@ List<Company> recentList = [
         "Part-time",
       ],
       mainCriteria: "Part-time",
+      employee: "15 người",
       salaryDetail: [
         "Một tuần dạy học 3 ngày",
         "Một ngày ít nhất 3 tiếng.",
@@ -214,9 +222,10 @@ List<Company> recentHistoryList = [
         "Part-time",
       ],
       mainCriteria: "Full Time",
+      employee: "15 người",
       salaryDetail: [
         "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
-        "Ca 1 (7h-15h), Ca 2 (15h-23h)",
+        "Ca 1 (7h-15 ngườih), Ca 2 (15 ngườih-23h)",
         "200.000VND/1 ca, 1 ca 8 tiếng",
       ],
       jobOpportunity:
@@ -243,10 +252,11 @@ List<Company> recentHistoryList = [
         "Full Time",
       ],
       mainCriteria: "Full Time",
+      employee: "15 người",
       salaryDetail: [
         "Một tuần làm việc 7 ngày, 1 tháng được một ngày nghỉ",
         "Ca sáng(6h - 14h) - tối(14h - 22h), mỗi ca 8 tiếng.",
-        "150.000VND/1 ca",
+        "15 người0.000VND/1 ca",
       ],
       jobOpportunity: "Giữ xe cho khách của quán",
       jobResponsbilities: [
@@ -270,6 +280,7 @@ List<Company> recentHistoryList = [
         "Part-time",
       ],
       mainCriteria: "Part-time",
+      employee: "15 người",
       salaryDetail: [
         "Một tuần dạy học 3 ngày",
         "Một ngày ít nhất 3 tiếng.",
@@ -299,6 +310,7 @@ List<Company> recentHistoryList = [
         "Part-time",
       ],
       mainCriteria: "Part-time",
+      employee: "15 người",
       salaryDetail: [
         "Một tuần dạy học 3 ngày",
         "Một ngày ít nhất 3 tiếng.",
