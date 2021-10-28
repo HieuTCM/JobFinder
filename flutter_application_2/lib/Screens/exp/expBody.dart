@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:job/views/job_detail.dart';
 
 class expBody extends StatefulWidget {
   const expBody({
@@ -10,13 +11,17 @@ class expBody extends StatefulWidget {
   State<expBody> createState() => _expBodyState();
 }
 
-final _controller = TextEditingController();
+final comNameCon = TextEditingController();
+final jobNameCon = TextEditingController();
+final jobDetailCon = TextEditingController();
+var comName = "", jobName = "", jobDetail = "";
+String dateStringExp1 = "";
+String dateStringExp2 = "";
+bool valueCamketExp = false;
 
 class _expBodyState extends State<expBody> {
   DateTime date = DateTime.now();
-  String dateString = "";
-  String dateString2 = "";
-  bool value = false;
+
   Future<Null> selectDatePicker(BuildContext) async {
     final DateTime? picked = await showDatePicker(
         context: context,
@@ -25,7 +30,7 @@ class _expBodyState extends State<expBody> {
         lastDate: date);
     if (picked != null) {
       setState(() {
-        dateString = "${picked.day}/${picked.month}/${picked.year}";
+        dateStringExp1 = "${picked.day}/${picked.month}/${picked.year}";
       });
     }
   }
@@ -38,7 +43,7 @@ class _expBodyState extends State<expBody> {
         lastDate: date);
     if (picked != null) {
       setState(() {
-        dateString2 = "${picked.day}/${picked.month}/${picked.year}";
+        dateStringExp2 = "${picked.day}/${picked.month}/${picked.year}";
       });
     }
   }
@@ -58,6 +63,7 @@ class _expBodyState extends State<expBody> {
                 },
                 child: TextField(
                   textAlign: TextAlign.left,
+                  controller: comNameCon..text = comName,
                   decoration: InputDecoration(
                     contentPadding:
                         EdgeInsets.only(bottom: 20, top: 20, left: 20),
@@ -78,6 +84,7 @@ class _expBodyState extends State<expBody> {
                   FocusScope.of(context).unfocus();
                 },
                 child: TextField(
+                  controller: jobNameCon..text = jobName,
                   textAlign: TextAlign.left,
                   decoration: InputDecoration(
                     contentPadding:
@@ -93,7 +100,7 @@ class _expBodyState extends State<expBody> {
               height: 25,
             ),
             Container(
-              child: value
+              child: valueCamketExp
                   ? Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -103,7 +110,7 @@ class _expBodyState extends State<expBody> {
                                 horizontal: 0, vertical: 10),
                             child: TextField(
                               controller: TextEditingController()
-                                ..text = dateString.toString(),
+                                ..text = dateStringExp1.toString(),
                               textAlign: TextAlign.left,
                               decoration: InputDecoration(
                                 suffixIcon: IconButton(
@@ -135,10 +142,10 @@ class _expBodyState extends State<expBody> {
                             children: [
                               ListTile(
                                 leading: Checkbox(
-                                    value: value,
+                                    value: valueCamketExp,
                                     onChanged: (value) {
                                       setState(() {
-                                        this.value = value!;
+                                        valueCamketExp = !valueCamketExp;
                                       });
                                     }),
                                 title: Text("Vẫn đang làm công việc này"),
@@ -154,8 +161,7 @@ class _expBodyState extends State<expBody> {
                             child: TextFormField(
                               maxLines: 5,
                               keyboardType: TextInputType.multiline,
-                              controller: TextEditingController()
-                                ..text = dateString.toString(),
+                              controller: jobDetailCon..text = jobDetail,
                               textAlign: TextAlign.left,
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.only(
@@ -177,7 +183,7 @@ class _expBodyState extends State<expBody> {
                                 horizontal: 0, vertical: 10),
                             child: TextField(
                               controller: TextEditingController()
-                                ..text = dateString.toString(),
+                                ..text = dateStringExp1.toString(),
                               textAlign: TextAlign.left,
                               decoration: InputDecoration(
                                 suffixIcon: IconButton(
@@ -208,7 +214,7 @@ class _expBodyState extends State<expBody> {
                                 horizontal: 0, vertical: 10),
                             child: TextField(
                               controller: TextEditingController()
-                                ..text = dateString2.toString(),
+                                ..text = dateStringExp2.toString(),
                               textAlign: TextAlign.left,
                               decoration: InputDecoration(
                                 suffixIcon: IconButton(
@@ -240,10 +246,10 @@ class _expBodyState extends State<expBody> {
                             children: [
                               ListTile(
                                 leading: Checkbox(
-                                    value: value,
+                                    value: valueCamketExp,
                                     onChanged: (value) {
                                       setState(() {
-                                        this.value = value!;
+                                        valueCamketExp = !valueCamketExp;
                                       });
                                     }),
                                 title: Text("Vẫn đang làm công việc này"),
@@ -258,8 +264,7 @@ class _expBodyState extends State<expBody> {
                                 horizontal: 0, vertical: 10),
                             child: TextFormField(
                               maxLines: 5,
-                              controller: TextEditingController()
-                                ..text = dateString.toString(),
+                              controller: jobDetailCon..text = jobDetail,
                               textAlign: TextAlign.left,
                               keyboardType: TextInputType.multiline,
                               decoration: InputDecoration(

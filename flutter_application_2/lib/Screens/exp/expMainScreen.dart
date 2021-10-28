@@ -29,7 +29,15 @@ class expMainScreen extends StatelessWidget {
       body: expBody(),
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            print(jobNameCon.text);
+            print(comNameCon.text);
+            print(dateStringExp1);
+            print(dateStringExp2);
+            print(valueCamketExp);
+            print(jobDetailCon.text);
+          },
+          // onPressed: () => Navigator.pop(context),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           textColor: Colors.white,

@@ -29,8 +29,12 @@ class covidTest extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => EditProfile()));
+            print(valueTestOption);
+            print(valueTestResult);
+            print(valueCamket);
+            print(dateString);
+            // Navigator.push(context,
+            //     MaterialPageRoute(builder: (context) => EditProfile()));
           },
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),

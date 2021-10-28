@@ -127,6 +127,15 @@ class _SettingsPageState extends State<SettingsPage> {
   bool valueq1 = true;
   bool valueq2 = false;
   bool valueq3 = false;
+  final _oldPasswordCon = TextEditingController();
+  final _new1PasswordCon = TextEditingController();
+  final _new2PasswordCon = TextEditingController();
+  bool _showOldPassword = true;
+  bool _showNew1Password = true;
+  bool _showNew2Password = true;
+  var _oldPassword = "", _new1Password = "", _new2Password = "";
+  var _myOldPassord = "TuyenAhihi";
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
   GestureDetector buildAccountOptionRow(
       BuildContext context, String title, int type) {
     return GestureDetector(
@@ -135,35 +144,158 @@ class _SettingsPageState extends State<SettingsPage> {
           showDialog(
               context: context,
               builder: (BuildContext context) {
-                return AlertDialog(
-                  title: Text(title),
-                  content: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      InfoTextBox(
-                          textField: "Mật khẩu hiện tại",
-                          placeHolderField: "",
-                          isPasswordField: true,
-                          isNumberField: false),
-                      InfoTextBox(
-                          textField: "Mật khẩu mới",
-                          placeHolderField: "",
-                          isPasswordField: true,
-                          isNumberField: false),
-                      InfoTextBox(
-                          textField: "Xác nhận mật khẩu mới",
-                          placeHolderField: "",
-                          isPasswordField: true,
-                          isNumberField: false),
+                return Form(
+                  key: formKey,
+                  child: AlertDialog(
+                    title: Text(title),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(
+                          height: 15,
+                        ),
+                        TextFormField(
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Vui lòng không được để trống";
+                            } else if (value != _myOldPassord) {
+                              return "Sai mật khẩu";
+                            } else {
+                              return null;
+                            }
+                          },
+                          textAlign: TextAlign.left,
+                          onTap: () {
+                            _oldPasswordCon.selection = TextSelection(
+                                baseOffset: _oldPasswordCon.text.length,
+                                extentOffset: _oldPasswordCon.text.length);
+                          },
+                          keyboardType: TextInputType.text,
+                          controller: _oldPasswordCon..text = _oldPassword,
+                          obscureText: _showOldPassword,
+                          decoration: InputDecoration(
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    _showOldPassword = !_showOldPassword;
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.remove_red_eye,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              contentPadding: EdgeInsets.only(
+                                  bottom: 20, top: 20, left: 20),
+                              labelText: "Mật khẩu hiện tại",
+                              border: OutlineInputBorder(),
+                              hintStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              )),
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        TextFormField(
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Vui lòng không được để trống";
+                            } else {
+                              return null;
+                            }
+                          },
+                          textAlign: TextAlign.left,
+                          onTap: () {
+                            _new1PasswordCon.selection = TextSelection(
+                                baseOffset: _new1PasswordCon.text.length,
+                                extentOffset: _new1PasswordCon.text.length);
+                          },
+                          keyboardType: TextInputType.text,
+                          controller: _new1PasswordCon..text = _new1Password,
+                          obscureText: _showNew1Password,
+                          decoration: InputDecoration(
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    _showNew1Password = !_showNew1Password;
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.remove_red_eye,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              contentPadding: EdgeInsets.only(
+                                  bottom: 20, top: 20, left: 20),
+                              labelText: "Mật khẩu mới",
+                              border: OutlineInputBorder(),
+                              hintStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              )),
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                        TextFormField(
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Vui lòng không được để trống";
+                            } else if (_new1PasswordCon.text !=
+                                _new2PasswordCon.text) {
+                              return "Mật khẩu xác nhận không khớp";
+                            } else {
+                              return null;
+                            }
+                          },
+                          textAlign: TextAlign.left,
+                          onTap: () {
+                            _new2PasswordCon.selection = TextSelection(
+                                baseOffset: _new2PasswordCon.text.length,
+                                extentOffset: _new2PasswordCon.text.length);
+                          },
+                          keyboardType: TextInputType.text,
+                          controller: _new2PasswordCon..text = _new2Password,
+                          obscureText: _showNew2Password,
+                          decoration: InputDecoration(
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    _showNew2Password = !_showNew2Password;
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.remove_red_eye,
+                                  color: Colors.grey,
+                                ),
+                              ),
+                              contentPadding: EdgeInsets.only(
+                                  bottom: 20, top: 20, left: 20),
+                              labelText: "Xác nhận mật khẩu mới",
+                              border: OutlineInputBorder(),
+                              hintStyle: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              )),
+                        ),
+                      ],
+                    ),
+                    actions: [
+                      FlatButton(
+                          onPressed: () {
+                            if (formKey.currentState!.validate()) {
+                              Navigator.pop(
+                                context,
+                              );
+                            } else {}
+                          },
+                          child: Text("Xác nhận")),
                     ],
                   ),
-                  actions: [
-                    FlatButton(
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: Text("Đóng")),
-                  ],
                 );
               });
         } else if (type == 2) {

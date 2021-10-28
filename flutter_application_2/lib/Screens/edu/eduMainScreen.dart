@@ -28,7 +28,14 @@ class eduMainScreen extends StatelessWidget {
       body: eduBody(),
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            print(schooleNameCon.text);
+            print(majorNameCon.text);
+            print(valueCamketEdu);
+            print(dateStringEdu1);
+            print(dateStringEdu2);
+          },
+          // onPressed: () => Navigator.pop(context),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           textColor: Colors.white,

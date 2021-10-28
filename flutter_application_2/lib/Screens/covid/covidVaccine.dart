@@ -40,8 +40,12 @@ class covidVaccine extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => EditProfile()));
+            print(valueContent);
+            print(dateString1);
+            print(dateString2);
+            print(valueCamketVac);
+            // Navigator.push(context,
+            //     MaterialPageRoute(builder: (context) => EditProfile()));
           },
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),

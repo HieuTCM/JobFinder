@@ -10,13 +10,16 @@ class eduBody extends StatefulWidget {
   State<eduBody> createState() => _eduBodyState();
 }
 
-final _controller = TextEditingController();
+final schooleNameCon = TextEditingController();
+final majorNameCon = TextEditingController();
+var schoolName = "", majorName = "";
+String dateStringEdu1 = "";
+String dateStringEdu2 = "";
+bool valueCamketEdu = false;
 
 class _eduBodyState extends State<eduBody> {
   DateTime date = DateTime.now();
-  String dateString = "";
-  String dateString2 = "";
-  bool value = false;
+
   Future<Null> selectDatePicker(BuildContext) async {
     final DateTime? picked = await showDatePicker(
         context: context,
@@ -25,7 +28,7 @@ class _eduBodyState extends State<eduBody> {
         lastDate: date);
     if (picked != null) {
       setState(() {
-        dateString = "${picked.day}/${picked.month}/${picked.year}";
+        dateStringEdu1 = "${picked.day}/${picked.month}/${picked.year}";
       });
     }
   }
@@ -38,7 +41,7 @@ class _eduBodyState extends State<eduBody> {
         lastDate: date);
     if (picked != null) {
       setState(() {
-        dateString2 = "${picked.day}/${picked.month}/${picked.year}";
+        dateStringEdu2 = "${picked.day}/${picked.month}/${picked.year}";
       });
     }
   }
@@ -58,6 +61,7 @@ class _eduBodyState extends State<eduBody> {
                 },
                 child: TextField(
                   textAlign: TextAlign.left,
+                  controller: schooleNameCon..text = schoolName,
                   decoration: InputDecoration(
                     contentPadding:
                         EdgeInsets.only(bottom: 20, top: 20, left: 20),
@@ -79,6 +83,7 @@ class _eduBodyState extends State<eduBody> {
                 },
                 child: TextField(
                   textAlign: TextAlign.left,
+                  controller: majorNameCon..text = majorName,
                   decoration: InputDecoration(
                     contentPadding:
                         EdgeInsets.only(bottom: 20, top: 20, left: 20),
@@ -93,7 +98,7 @@ class _eduBodyState extends State<eduBody> {
               height: 25,
             ),
             Container(
-              child: value
+              child: valueCamketEdu
                   ? Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -103,7 +108,7 @@ class _eduBodyState extends State<eduBody> {
                                 horizontal: 0, vertical: 10),
                             child: TextField(
                               controller: TextEditingController()
-                                ..text = dateString.toString(),
+                                ..text = dateStringEdu1.toString(),
                               textAlign: TextAlign.left,
                               decoration: InputDecoration(
                                 suffixIcon: IconButton(
@@ -135,10 +140,10 @@ class _eduBodyState extends State<eduBody> {
                             children: [
                               ListTile(
                                 leading: Checkbox(
-                                    value: value,
+                                    value: valueCamketEdu,
                                     onChanged: (value) {
                                       setState(() {
-                                        this.value = value!;
+                                        valueCamketEdu = !valueCamketEdu;
                                       });
                                     }),
                                 title: Text("Vẫn còn học tại đây"),
@@ -155,7 +160,7 @@ class _eduBodyState extends State<eduBody> {
                                 horizontal: 0, vertical: 10),
                             child: TextField(
                               controller: TextEditingController()
-                                ..text = dateString.toString(),
+                                ..text = dateStringEdu1.toString(),
                               textAlign: TextAlign.left,
                               decoration: InputDecoration(
                                 suffixIcon: IconButton(
@@ -186,7 +191,7 @@ class _eduBodyState extends State<eduBody> {
                                 horizontal: 0, vertical: 10),
                             child: TextField(
                               controller: TextEditingController()
-                                ..text = dateString2.toString(),
+                                ..text = dateStringEdu2.toString(),
                               textAlign: TextAlign.left,
                               decoration: InputDecoration(
                                 suffixIcon: IconButton(
@@ -218,10 +223,10 @@ class _eduBodyState extends State<eduBody> {
                             children: [
                               ListTile(
                                 leading: Checkbox(
-                                    value: value,
+                                    value: valueCamketEdu,
                                     onChanged: (value) {
                                       setState(() {
-                                        this.value = value!;
+                                        valueCamketEdu = !valueCamketEdu;
                                       });
                                     }),
                                 title: Text("Vẫn còn học tại đây"),

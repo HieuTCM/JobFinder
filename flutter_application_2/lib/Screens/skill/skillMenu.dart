@@ -21,9 +21,9 @@ class SkillMenu extends StatefulWidget {
   State<SkillMenu> createState() => _SkillMenuState();
 }
 
-class _SkillMenuState extends State<SkillMenu> {
-  List<int> pos = posList;
+List<int> pos = posList;
 
+class _SkillMenuState extends State<SkillMenu> {
   @override
   Widget build(BuildContext context) {
     return Container(

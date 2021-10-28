@@ -8,7 +8,22 @@ class EditProfileBody extends StatefulWidget {
   State<EditProfileBody> createState() => _EditProfileBodyState();
 }
 
-final _testcontroller = TextEditingController();
+bool _showPassword = true;
+bool _editFullName = true;
+bool _editAge = true;
+bool _editPhone = true;
+bool _editEmail = true;
+bool _editAddress = true;
+final _nameCon = TextEditingController();
+final _ageCon = TextEditingController();
+final _phoneCon = TextEditingController();
+final _emailCon = TextEditingController();
+final _addressCon = TextEditingController();
+var _name = "Đặng Hà Trung Tuyển",
+    _age = "18",
+    _phone = "0932981370",
+    _email = "trungtuyen00310@gmail.com",
+    _address = "123, Lê Văn Việt, Quận 9";
 // final _testcontroller = TextEditingController();
 // final _testcontroller = TextEditingController();
 // final _testcontroller = TextEditingController();
@@ -41,19 +56,77 @@ class _EditProfileBodyState extends State<EditProfileBody> {
         SizedBox(
           height: 20,
         ),
-        InfoTextBox(
-          textField: "Họ và tên",
-          placeHolderField: "Đặng Hà Trung Tuyển",
-          isPasswordField: false,
-          isNumberField: false,
+        TextField(
+          textAlign: TextAlign.left,
+          onTap: () {
+            _nameCon.selection = TextSelection(
+                baseOffset: _nameCon.text.length,
+                extentOffset: _nameCon.text.length);
+          },
+          keyboardType: TextInputType.text,
+          controller: _nameCon..text = _name,
+          readOnly: _editFullName,
+          obscureText: false,
+          decoration: InputDecoration(
+              suffixIcon: IconButton(
+                onPressed: () {
+                  setState(() {
+                    _editFullName = !_editFullName;
+                  });
+                },
+                icon: Icon(
+                  Icons.mode_edit_outline_outlined,
+                  color: Colors.grey,
+                ),
+              ),
+              contentPadding: EdgeInsets.only(bottom: 20, top: 20, left: 20),
+              labelText: "Họ và Tên",
+              floatingLabelBehavior: FloatingLabelBehavior.always,
+              border: OutlineInputBorder(),
+              hintStyle: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              )),
         ),
-        InfoTextBox(
-            textField: "Tuổi",
-            placeHolderField: "18",
-            isPasswordField: false,
-            isNumberField: true),
         SizedBox(
-          height: 2,
+          height: 15,
+        ),
+        TextField(
+          textAlign: TextAlign.left,
+          onTap: () {
+            _nameCon.selection = TextSelection(
+                baseOffset: _ageCon.text.length,
+                extentOffset: _ageCon.text.length);
+          },
+          keyboardType: TextInputType.number,
+          controller: _ageCon..text = _age,
+          readOnly: _editAge,
+          obscureText: false,
+          decoration: InputDecoration(
+              suffixIcon: IconButton(
+                onPressed: () {
+                  setState(() {
+                    _editAge = !_editAge;
+                  });
+                },
+                icon: Icon(
+                  Icons.mode_edit_outline_outlined,
+                  color: Colors.grey,
+                ),
+              ),
+              contentPadding: EdgeInsets.only(bottom: 20, top: 20, left: 20),
+              labelText: "Tuổi",
+              floatingLabelBehavior: FloatingLabelBehavior.always,
+              border: OutlineInputBorder(),
+              hintStyle: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              )),
+        ),
+        SizedBox(
+          height: 10,
         ),
         Container(
             margin: EdgeInsets.only(right: 300.0),
@@ -94,36 +167,25 @@ class _EditProfileBodyState extends State<EditProfileBody> {
             ],
           ),
         ),
-        InfoTextBox(
-            textField: "Số điện thoại",
-            placeHolderField: "0932981370",
-            isPasswordField: false,
-            isNumberField: true),
-        InfoTextBox(
-            textField: "E-mail",
-            placeHolderField: "trungtuyen00310@gmail.com",
-            isPasswordField: false,
-            isNumberField: false),
-        InfoTextBox(
-            textField: "Địa chỉ",
-            placeHolderField: "123, Lê Văn Việt, Quận 9",
-            isPasswordField: false,
-            isNumberField: false),
+        SizedBox(
+          height: 15,
+        ),
         TextField(
           textAlign: TextAlign.left,
           onTap: () {
-            _testcontroller.selection =
-                TextSelection(baseOffset: 20, extentOffset: 20);
+            _nameCon.selection = TextSelection(
+                baseOffset: _phoneCon.text.length,
+                extentOffset: _phoneCon.text.length);
           },
-          keyboardType: TextInputType.text,
-          controller: _testcontroller,
-          readOnly: false,
+          keyboardType: TextInputType.number,
+          controller: _phoneCon..text = _phone,
+          readOnly: _editPhone,
           obscureText: false,
           decoration: InputDecoration(
               suffixIcon: IconButton(
                 onPressed: () {
                   setState(() {
-                    editInfo = !editInfo;
+                    _editPhone = !_editPhone;
                   });
                 },
                 icon: Icon(
@@ -132,16 +194,88 @@ class _EditProfileBodyState extends State<EditProfileBody> {
                 ),
               ),
               contentPadding: EdgeInsets.only(bottom: 20, top: 20, left: 20),
-              labelText: "Test",
+              labelText: "Số điện thoại",
               floatingLabelBehavior: FloatingLabelBehavior.always,
               border: OutlineInputBorder(),
-              //hintText: widget.placeHolderField,
               hintStyle: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               )),
         ),
+        SizedBox(
+          height: 15,
+        ),
+        TextField(
+          textAlign: TextAlign.left,
+          onTap: () {
+            _nameCon.selection = TextSelection(
+                baseOffset: _emailCon.text.length,
+                extentOffset: _emailCon.text.length);
+          },
+          keyboardType: TextInputType.emailAddress,
+          controller: _emailCon..text = _email,
+          readOnly: _editEmail,
+          obscureText: false,
+          decoration: InputDecoration(
+              suffixIcon: IconButton(
+                onPressed: () {
+                  setState(() {
+                    _editEmail = !_editEmail;
+                  });
+                },
+                icon: Icon(
+                  Icons.mode_edit_outline_outlined,
+                  color: Colors.grey,
+                ),
+              ),
+              contentPadding: EdgeInsets.only(bottom: 20, top: 20, left: 20),
+              labelText: "Email",
+              floatingLabelBehavior: FloatingLabelBehavior.always,
+              border: OutlineInputBorder(),
+              hintStyle: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              )),
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        TextField(
+          textAlign: TextAlign.left,
+          onTap: () {
+            _nameCon.selection = TextSelection(
+                baseOffset: _addressCon.text.length,
+                extentOffset: _addressCon.text.length);
+          },
+          keyboardType: TextInputType.number,
+          controller: _addressCon..text = _address,
+          readOnly: _editAddress,
+          obscureText: false,
+          decoration: InputDecoration(
+              suffixIcon: IconButton(
+                onPressed: () {
+                  setState(() {
+                    _editAddress = !_editAddress;
+                  });
+                },
+                icon: Icon(
+                  Icons.mode_edit_outline_outlined,
+                  color: Colors.grey,
+                ),
+              ),
+              contentPadding: EdgeInsets.only(bottom: 20, top: 20, left: 20),
+              labelText: "Địa chỉ",
+              floatingLabelBehavior: FloatingLabelBehavior.always,
+              border: OutlineInputBorder(),
+              hintStyle: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              )),
+        ),
+
         SizedBox(
           height: 10,
         ),
@@ -151,7 +285,13 @@ class _EditProfileBodyState extends State<EditProfileBody> {
         //     isPasswordField: true),
         RaisedButton(
           onPressed: () {
-            print(_testcontroller.text);
+            print(_nameCon.text);
+            print(_ageCon.text);
+            print(valueq1);
+            print(valueq2);
+            print(_phoneCon.text);
+            print(_emailCon.text);
+            print(_addressCon.text);
           },
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),

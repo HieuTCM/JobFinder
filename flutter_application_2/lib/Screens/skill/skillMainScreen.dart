@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:job/Screens/exp/expBody.dart';
 import 'package:job/Screens/skill/skillBody.dart';
+import 'package:job/Screens/skill/skillMenu.dart';
 import 'package:job/constants.dart';
 
 class skillMainScreen extends StatelessWidget {
@@ -28,7 +29,10 @@ class skillMainScreen extends StatelessWidget {
       body: skillBody(),
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
-          onPressed: () => Navigator.pop(context),
+          // onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            print(pos);
+          },
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           textColor: Colors.white,
