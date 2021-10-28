@@ -41,52 +41,50 @@ class editProfileMenu extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Row(
-            children: [
-              Icon(
-                Icons.person,
-                color: Colors.black,
-              ),
-              SizedBox(
-                width: 8,
-              ),
-              Text(
-                "Thông tin cá nhân",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
-          Divider(
-            height: 15,
-            thickness: 2,
-          ),
-          Container(
-            child: EditProfileBody(),
-          ),
-          RaisedButton(
-            onPressed: () {},
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0)),
-            textColor: Colors.white,
-            padding: const EdgeInsets.all(0),
-            child: Container(
-              alignment: Alignment.center,
-              height: 50.0,
-              decoration: new BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  gradient: new LinearGradient(colors: [
-                    Color.fromARGB(255, 255, 136, 34),
-                    Color.fromARGB(255, 255, 177, 41)
-                  ])),
-              padding: const EdgeInsets.all(0),
-              child: Text(
-                "Cập nhật thông tin",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-          ),
-//------------------------------------
+          EditProfileBody(),
+          // Row(
+          //   children: [
+          //     Icon(
+          //       Icons.person,
+          //       color: Colors.black,
+          //     ),
+          //     SizedBox(
+          //       width: 8,
+          //     ),
+          //     Text(
+          //       "Thông tin cá nhân",
+          //       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          //     ),
+          //   ],
+          // ),
+          // Divider(
+          //   height: 15,
+          //   thickness: 2,
+          // ),
+          // EditProfileBody(),
+          // RaisedButton(
+          //   onPressed: () {},
+          //   shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(10.0)),
+          //   textColor: Colors.white,
+          //   padding: const EdgeInsets.all(0),
+          //   child: Container(
+          //     alignment: Alignment.center,
+          //     height: 50.0,
+          //     decoration: new BoxDecoration(
+          //         borderRadius: BorderRadius.circular(10.0),
+          //         gradient: new LinearGradient(colors: [
+          //           Color.fromARGB(255, 255, 136, 34),
+          //           Color.fromARGB(255, 255, 177, 41)
+          //         ])),
+          //     padding: const EdgeInsets.all(0),
+          //     child: Text(
+          //       "Cập nhật thông tin",
+          //       textAlign: TextAlign.center,
+          //       style: TextStyle(fontWeight: FontWeight.bold),
+          //     ),
+          //   ),
+          // ),
           SizedBox(
             height: 20,
           ),

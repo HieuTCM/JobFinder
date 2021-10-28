@@ -50,7 +50,7 @@ class Home extends StatelessWidget {
             children: <Widget>[
               SizedBox(height: 25.0),
               Text(
-                "Chào Nguyen Van A",
+                "Chào Trung Tuyển",
                 style: kPageTitleStyle,
               ),
               SizedBox(height: 25.0),

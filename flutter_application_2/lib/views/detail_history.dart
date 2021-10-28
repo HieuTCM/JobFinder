@@ -181,34 +181,48 @@ class DetailHistory extends StatelessWidget {
               Expanded(
                 child: SizedBox(
                   height: 50.0,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Applications()));
-                    },
-                    style: ElevatedButton.styleFrom(
-                      primary: "${company!.type}" == "Đang chờ"
-                          ? Colors.red
-                          : "${company!.type}" == "Thành công"
-                              ? Colors.green
-                              : Colors.black,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                    ),
-                    child: Text(
-                      "${company!.type}" == "Đang chờ"
-                          ? "Hủy đơn xin việc"
-                          : "${company!.type}" == "Thành công"
-                              ? "Xin việc thành công"
-                              : "Xin việc",
-                      style: kTitleStyle.copyWith(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
+                  child: "${company!.type}" == "Thành công"
+                      ? Container(
+                          width: 50.0,
+                          height: 50.0,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: kBlack.withOpacity(.5)),
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          child: Center(
+                            child: Text("Xin việc thành công"),
+                          ),
+                        )
+                      : ElevatedButton(
+                          onPressed: () {
+                            "${company!.type}" == "Thành công"
+                                ? {}
+                                : Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Applications()));
+                          },
+                          style: ElevatedButton.styleFrom(
+                            primary: "${company!.type}" == "Đang chờ"
+                                ? Colors.red
+                                : "${company!.type}" == "Thành công"
+                                    ? Colors.green
+                                    : Colors.black,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                          ),
+                          child: Text(
+                            "${company!.type}" == "Đang chờ"
+                                ? "Hủy đơn xin việc"
+                                : "${company!.type}" == "Thành công"
+                                    ? "Xin việc thành công"
+                                    : "Xin việc",
+                            style: kTitleStyle.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
                 ),
               )
             ],
