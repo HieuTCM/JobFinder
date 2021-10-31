@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:job/constants.dart';
-import 'package:job/models/company.dart';
+import 'package:job/models/data1.dart';
+
 
 class CompanyCard extends StatelessWidget {
-  final Company? company;
+  final Job? company;
   CompanyCard({this.company});
   @override
   Widget build(BuildContext context) {
@@ -27,21 +28,21 @@ class CompanyCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12.0),
                   image: DecorationImage(
-                    image: AssetImage(company!.image!),
+                    image: AssetImage("assets/" + company!.image),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
               Spacer(),
               Text(
-                company!.sallary!,
+                company!.jobName,
                 style: kTitleStyle.copyWith(color: Colors.white),
               ),
             ],
           ),
           SizedBox(height: 15.0),
           Text(
-            company!.job!,
+            company!.jobName,
             style: kTitleStyle.copyWith(
               color: Colors.white,
               fontWeight: FontWeight.bold,
@@ -52,7 +53,7 @@ class CompanyCard extends StatelessWidget {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: company!.companyName,
+                  text: company!.jobName,
                   style: kSubtitleStyle.copyWith(
                     color: Colors.white,
                   ),
@@ -64,7 +65,7 @@ class CompanyCard extends StatelessWidget {
                   ),
                 ),
                 TextSpan(
-                  text: company!.city,
+                  text: company!.jobName,
                   style: kSubtitleStyle.copyWith(
                     color: Colors.white,
                   ),
@@ -73,32 +74,32 @@ class CompanyCard extends StatelessWidget {
             ),
           ),
           SizedBox(height: 15.0),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: company!.tag!
-                  .map(
-                    (e) => Container(
-                      alignment: Alignment.center,
-                      margin: EdgeInsets.only(right: 10.0),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 12.0, vertical: 5.0),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12.0),
-                        color: kBlackAccent,
-                      ),
-                      child: Text(
-                        e,
-                        style: kSubtitleStyle.copyWith(
-                          color: Colors.white,
-                          fontSize: 12.0,
-                        ),
-                      ),
-                    ),
-                  )
-                  .toList(),
-            ),
-          ),
+          // Expanded(
+          //   // child: Row(
+          //   //   mainAxisAlignment: MainAxisAlignment.start,
+          //   //   children: company!.company.tag
+          //   //       .map(
+          //   //         (e) => Container(
+          //   //           alignment: Alignment.center,
+          //   //           margin: EdgeInsets.only(right: 10.0),
+          //   //           padding:
+          //   //               EdgeInsets.symmetric(horizontal: 12.0, vertical: 5.0),
+          //   //           decoration: BoxDecoration(
+          //   //             borderRadius: BorderRadius.circular(12.0),
+          //   //             color: kBlackAccent,
+          //   //           ),
+          //   //           child: Text(
+          //   //             e,
+          //   //             style: kSubtitleStyle.copyWith(
+          //   //               color: Colors.white,
+          //   //               fontSize: 12.0,
+          //   //             ),
+          //   //           ),
+          //   //         ),
+          //   //       )
+          //   //       .toList(),
+          //   // ),
+          // ),
         ],
       ),
     );

@@ -1,23 +1,28 @@
+import 'package:job/Screens/exp/expBody.dart';
+import 'package:job/Screens/exp/expBody.dart';
+import 'package:job/Screens/exp/expBody.dart';
+
 class Company {
-  final String? companyName;
-  final String? type;
-  final String? job;
-  final String? time;
-  final String? city;
-  final String? sallary;
-  final String? image;
-  final String? mainCriteria;
-  final String? jobOpportunity;
-  final String? employee;
-  final String? covidPassport;
-  final String? workingPlace;
-  final List<String>? salaryDescription;
-  final String? workingTimeDescription;
-  final List<String>? workingTime;
-  final String? salaryDetail;
-  final List<String>? aboutCompany;
-  final List<String>? jobResponsbilities;
-  final List<String>? tag;
+  late final String? companyName;
+  late final String? type;
+  late final String? job;
+  late final String? time;
+  late final String? city;
+  late final String? sallary;
+  late final String? image;
+  late final String? mainCriteria;
+  late final String? jobOpportunity;
+  late final String? employee;
+  late final String? covidPassport;
+  late final String? workingPlace;
+  late final List<String>? salaryDescription;
+  late final String? workingTimeDescription;
+  late final List<String>? workingTime;
+  late final String? salaryDetail;
+  late final List<String>? aboutCompany;
+  late final List<String>? jobResponsbilities;
+  late final List<String>? tag;
+
   Company({
     this.time,
     this.type,
@@ -40,6 +45,7 @@ class Company {
     this.aboutCompany,
   });
 }
+
 
 List<Company> companyList = [
   Company(

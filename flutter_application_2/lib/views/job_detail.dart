@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:job/Screens/applied/historyApplied.dart';
-import 'package:job/models/company.dart';
 import 'package:job/constants.dart';
+import 'package:job/models/data1.dart';
 import 'package:job/views/company_tab.dart';
 import 'package:job/views/description_tab.dart';
 import 'package:job/views/home.dart';
 import 'package:job/views/markPage.dart';
 
 class JobDetail extends StatelessWidget {
-  final Company? company;
+  final Job? company;
   JobDetail({this.company});
 
   @override
@@ -26,7 +26,7 @@ class JobDetail extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          company!.companyName!,
+          company!.jobName,
           style: kTitleStyle,
         ),
         centerTitle: true,
@@ -57,7 +57,7 @@ class JobDetail extends StatelessWidget {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15.0),
                           image: DecorationImage(
-                            image: AssetImage(company!.image!),
+                            image: AssetImage("assets/" + company!.image),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -65,20 +65,20 @@ class JobDetail extends StatelessWidget {
                     ),
                     SizedBox(height: 20.0),
                     Text(
-                      company!.job!,
+                      company!.city,
                       style: kTitleStyle.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     SizedBox(height: 15.0),
-                    Text(
-                      ('Lương : ' + company!.sallary!),
-                      style: kSubtitleStyle,
-                    ),
+                    // Text(
+                    //   ('Lương : ' + company!.sallary),
+                    //   style: kSubtitleStyle,
+                    // ),
                     SizedBox(height: 15.0),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: company!.tag!
+                      children: company!.company.tag
                           .map(
                             (e) => Container(
                               margin: EdgeInsets.symmetric(horizontal: 5.0),
@@ -128,8 +128,8 @@ class JobDetail extends StatelessWidget {
               Expanded(
                 child: TabBarView(
                   children: [
-                    DescriptionTab(company: company),
-                    CompanyTab(company: company),
+         //           DescriptionTab(company: company),
+           //         CompanyTab(company: company),
                   ],
                 ),
               )

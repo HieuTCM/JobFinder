@@ -1,7 +1,20 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:job/Screens/login/login.dart';
+import 'package:job/views/home.dart';
+import 'package:job/views/test.dart';
+
+class MyHttpOverrides extends HttpOverrides{
+  @override
+  HttpClient createHttpClient(SecurityContext? context){
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port) => true;
+  }
+}
 
 void main() {
+  HttpOverrides.global = MyHttpOverrides();
   runApp(MyApp());
 }
 
@@ -15,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginScreen(),
+      home: Home(),
     );
   }
 }

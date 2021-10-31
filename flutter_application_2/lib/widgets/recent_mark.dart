@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:job/constants.dart';
-import 'package:job/models/company.dart';
+import 'package:job/models/data1.dart';
+
 
 class RecentMark extends StatelessWidget {
-  final Company? company;
+  final Job? company;
   RecentMark({this.company});
   @override
   Widget build(BuildContext context) {
@@ -20,14 +21,14 @@ class RecentMark extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12.0),
             image: DecorationImage(
-              image: AssetImage(company!.image!),
+              image: AssetImage("assets/" + company!.company.logo),
               fit: BoxFit.cover,
             ),
           ),
         ),
-        title: Text(company!.job!, style: kTitleStyle),
+        title: Text(company!.company.job, style: kTitleStyle),
         subtitle: Text(
-          "${company!.companyName} • ${company!.mainCriteria}",
+          "${company!.company.companyName} • ${company!.mainCriteria}",
         ),
         trailing: Icon(
           Icons.bookmark_border,
