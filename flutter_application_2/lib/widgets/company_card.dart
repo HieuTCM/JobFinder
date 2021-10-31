@@ -35,7 +35,7 @@ class CompanyCard extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                company!.jobName,
+                company!.company.name,
                 style: kTitleStyle.copyWith(color: Colors.white),
               ),
             ],
@@ -53,7 +53,7 @@ class CompanyCard extends StatelessWidget {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: company!.jobName,
+                  text: company!.city,
                   style: kSubtitleStyle.copyWith(
                     color: Colors.white,
                   ),
@@ -65,7 +65,7 @@ class CompanyCard extends StatelessWidget {
                   ),
                 ),
                 TextSpan(
-                  text: company!.jobName,
+                  text: company!.sallary,
                   style: kSubtitleStyle.copyWith(
                     color: Colors.white,
                   ),

@@ -113,7 +113,7 @@ class Home extends StatelessWidget {
                         " Các công việc phổ biến",
                         style: kTitleStyle,
                       ),
-                      FlatButton(onPressed: (){print(company.company.sallary);}, child: Text('A')),
+              //        FlatButton(onPressed: (){print(company.company.sallary);}, child: Text('A')),
                       SizedBox(height: 15.0),
                       Container(
                         width: double.infinity,

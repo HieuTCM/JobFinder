@@ -26,7 +26,7 @@ class JobDetail extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          company!.jobName,
+          company!.company.name,
           style: kTitleStyle,
         ),
         centerTitle: true,
@@ -65,40 +65,40 @@ class JobDetail extends StatelessWidget {
                     ),
                     SizedBox(height: 20.0),
                     Text(
-                      company!.city,
+                      company!.jobName,
                       style: kTitleStyle.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     SizedBox(height: 15.0),
-                    // Text(
-                    //   ('Lương : ' + company!.sallary),
-                    //   style: kSubtitleStyle,
-                    // ),
-                    SizedBox(height: 15.0),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: company!.company.tag
-                          .map(
-                            (e) => Container(
-                              margin: EdgeInsets.symmetric(horizontal: 5.0),
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 8.0,
-                                vertical: 5.0,
-                              ),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8.0),
-                                border:
-                                    Border.all(color: kBlack.withOpacity(.5)),
-                              ),
-                              child: Text(
-                                e,
-                                style: kSubtitleStyle,
-                              ),
-                            ),
-                          )
-                          .toList(),
+                    Text(
+                      ('Lương : ' + company!.sallary),
+                      style: kSubtitleStyle,
                     ),
+                    SizedBox(height: 15.0),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.center,
+                    //   children: company!.company.tag
+                    //       .map(
+                    //         (e) => Container(
+                    //           margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    //           padding: EdgeInsets.symmetric(
+                    //             horizontal: 8.0,
+                    //             vertical: 5.0,
+                    //           ),
+                    //           decoration: BoxDecoration(
+                    //             borderRadius: BorderRadius.circular(8.0),
+                    //             border:
+                    //                 Border.all(color: kBlack.withOpacity(.5)),
+                    //           ),
+                    //           child: Text(
+                    //             e,
+                    //             style: kSubtitleStyle,
+                    //           ),
+                    //         ),
+                    //       )
+                    //       .toList(),
+                    // ),
                     SizedBox(height: 20.0),
                     Material(
                       color: Colors.white,
@@ -128,8 +128,8 @@ class JobDetail extends StatelessWidget {
               Expanded(
                 child: TabBarView(
                   children: [
-         //           DescriptionTab(company: company),
-           //         CompanyTab(company: company),
+                    DescriptionTab(company: company),
+                    CompanyTab(company: company),
                   ],
                 ),
               )
