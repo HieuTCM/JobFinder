@@ -72,7 +72,7 @@ class _markPageState extends State<markPage> {
           ),
         ),
       ),
-      bottomNavigationBar: bottombar(),
+      bottomNavigationBar: bottombar(username: '',),
     );
   }
 }

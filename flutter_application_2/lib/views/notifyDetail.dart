@@ -70,7 +70,7 @@ class NotifyDetail extends StatelessWidget {
               ],
             ),
           )),
-      bottomNavigationBar: bottombar(),
+      bottomNavigationBar: bottombar(username: '',),
     );
   }
 }

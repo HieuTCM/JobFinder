@@ -36,7 +36,7 @@ class _ApplicationsState extends State<Applications> {
         centerTitle: true,
       ),
       body: appliedBody(),
-      bottomNavigationBar: bottombar(),
+      bottomNavigationBar: bottombar(username: '',),
     );
   }
 }

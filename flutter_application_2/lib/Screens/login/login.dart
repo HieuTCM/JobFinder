@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:job/Screens/register/register.dart';
 import 'package:job/components/background.dart';
+import 'package:job/provider/FindJob_Provider.dart';
 import 'package:job/views/home.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -10,6 +11,12 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  TextEditingController _usernameController = new TextEditingController();
+  TextEditingController _passwordController = new TextEditingController();
+  var _usernameError="Username is wrong";
+  var _passwordError="Password is wrong";
+  var _userInvalid=false;
+  var _passInvalid=false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +46,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 alignment: Alignment.center,
                 margin: EdgeInsets.symmetric(horizontal: 40),
                 child: TextFormField(
-                  decoration: InputDecoration(labelText: "Tài khoản *"),
+                  controller: _usernameController,
+                  decoration: InputDecoration(
+                    labelText: "Tài khoản *",
+                    errorText: _userInvalid ? _usernameError:null,
+                  ),
                   // validator: (value) {
                   //   if (value!.isEmpty) {
                   //     return "Vui lòng không được để trống";
@@ -54,7 +65,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 alignment: Alignment.center,
                 margin: EdgeInsets.symmetric(horizontal: 40),
                 child: TextFormField(
-                  decoration: InputDecoration(labelText: "Mật khẩu *"),
+                  controller: _passwordController,
+                  decoration: InputDecoration(
+                    labelText: "Mật khẩu *",
+                    errorText: _passInvalid ? _passwordError:null,
+                  ),
                   // validator: (value) {
                   //   if (value!.isEmpty) {
                   //     return "Vui lòng không được để trống";
@@ -81,7 +96,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                          MaterialPageRoute(builder: (context) => onLogin(username: _usernameController.text.trim(),
+                              password: _passwordController.text.trim())));
                     } else {}
                   },
                   shape: RoundedRectangleBorder(
@@ -129,6 +145,65 @@ class _LoginScreenState extends State<LoginScreen> {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+class onLogin extends StatefulWidget {
+  final String username;
+  final String password;
+  const onLogin({Key? key, required this.username, required this.password}) : super(key: key);
+
+  @override
+  _onLoginState createState() => _onLoginState(this.username,this.password);
+}
+
+class _onLoginState extends State<onLogin> {
+  String username;
+  String password;
+
+  _onLoginState(this.username,this.password);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: FutureBuilder(
+          future: FindJobProvider.Login(username,password),
+          builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+            if (snapshot.hasError) {
+              print('Lỗi nè trùiii ' + snapshot.error.toString());
+            }
+            if(snapshot.hasData){
+              print(snapshot.data);
+              if(snapshot.data!.contains("Login Success")){
+                return Home(username: username);
+              }else{
+                return Container(
+                  child:AlertDialog(
+                    title: const Text('Đăng Nhập Không Thành Công'),
+                    content: SingleChildScrollView(
+                      child: ListBody(
+                        children: const <Widget>[
+                          Text('Sai tài khoản hoặc mật khẩu.'),
+                          Text('Xin vui lòng kiểm tra lại.'),
+                        ],
+                      ),
+                    ),
+                    actions: <Widget>[
+                      TextButton(
+                        child: const Text('Ok luôn nhó!'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  ),
+                );
+              }
+            }else{
+              return Container(child: CircularProgressIndicator(),);
+            }
+          }
       ),
     );
   }

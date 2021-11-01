@@ -61,7 +61,7 @@ class NotifyList extends StatelessWidget {
           return Divider();
         },
       ),
-      bottomNavigationBar: bottombar(),
+      bottomNavigationBar: bottombar(username: '',),
     );
   }
 }

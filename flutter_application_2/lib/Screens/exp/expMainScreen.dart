@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:job/Screens/covid/covidBody.dart';
 import 'package:job/Screens/edu/eduBody.dart';
 import 'package:job/Screens/exp/expBody.dart';
+import 'package:job/Screens/profile/editProfileMenu.dart';
 import 'package:job/constants.dart';
+import 'package:job/models/JobSeekerWorkExperience.dart';
+import 'package:job/provider/FindJob_Provider.dart';
 
 class expMainScreen extends StatelessWidget {
   @override
@@ -36,6 +39,23 @@ class expMainScreen extends StatelessWidget {
             print(dateStringExp2);
             print(valueCamketExp);
             print(jobDetailCon.text);
+
+            JobSeekerWorkExperience workExperience=new JobSeekerWorkExperience(
+                                    id: 0,
+                                    userId: userId,
+                                    skill: jobDetailCon.text,
+                                    experience: 'yes',
+                                    company: comNameCon.text,
+                                    job: jobNameCon.text,
+                                    startDay: dateStringExp1,
+                                    endDay: dateStringExp2,
+                                    isStillWorking: valueCamketExp
+            );
+            Future<String> result=FindJobProvider.createJobSeekerWorkExperience(workExperience);
+            result.then((value){
+              print(value);
+              Navigator.pop(context);
+            });
           },
           // onPressed: () => Navigator.pop(context),
           shape:

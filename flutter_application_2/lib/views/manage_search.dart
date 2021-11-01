@@ -212,7 +212,7 @@ class _mngSearchState extends State<mngSearch> {
           ),
         ),
       ),
-      bottomNavigationBar: bottombar(),
+      bottomNavigationBar: bottombar(username: '',),
     );
   }
 

@@ -11,7 +11,17 @@ import 'package:job/views/manage_search.dart';
 import 'package:job/Screens/profile/profile.dart';
 import 'package:job/views/searchpage.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  final String username;
+  const Home({Key? key, required this.username}) : super(key: key);
+
+  @override
+  _HomeState createState() => _HomeState(this.username);
+}
+
+class _HomeState extends State<Home> {
+  String username;
+  _HomeState(this.username);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +60,7 @@ class Home extends StatelessWidget {
             children: <Widget>[
               SizedBox(height: 25.0),
               Text(
-                "Chào Trung Tuyển",
+                "Chào "+this.username,
                 style: kPageTitleStyle,
               ),
               SizedBox(height: 25.0),
@@ -172,7 +182,7 @@ class Home extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: bottombar(),
+      bottomNavigationBar: bottombar(username: this.username,),
     );
   }
 }

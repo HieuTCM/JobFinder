@@ -161,7 +161,7 @@ class _searchPageState extends State<searchPage> {
           ),
         ),
       ),
-      bottomNavigationBar: bottombar(),
+      bottomNavigationBar: bottombar(username: '',),
     );
   }
 
