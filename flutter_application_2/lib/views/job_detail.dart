@@ -23,6 +23,8 @@ class JobDetail extends StatelessWidget {
             Icons.arrow_back_ios,
             color: kBlack,
           ),
+
+          ///tuyenntuyenen
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
