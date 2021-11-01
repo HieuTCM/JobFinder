@@ -9,7 +9,18 @@ import 'package:job/views/home.dart';
 import 'package:job/views/markPage.dart';
 import 'package:job/widgets/bottomAppbar.dart';
 
-class EditProfile extends StatelessWidget {
+class EditProfile extends StatefulWidget {
+  final String username;
+  const EditProfile({Key? key, required this.username}) : super(key: key);
+
+  @override
+  _EditProfileState createState() => _EditProfileState(this.username);
+}
+
+class _EditProfileState extends State<EditProfile> {
+  String username;
+ _EditProfileState(this.username);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +40,8 @@ class EditProfile extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: editProfileMenu(),
-      bottomNavigationBar: bottombar(),
+      body: editProfileMenu(username: this.username,),
+      bottomNavigationBar: bottombar(username: this.username,),
     );
   }
 }

@@ -30,7 +30,7 @@ class _expBodyState extends State<expBody> {
         lastDate: date);
     if (picked != null) {
       setState(() {
-        dateStringExp1 = "${picked.day}/${picked.month}/${picked.year}";
+        dateStringExp1 = "${picked.day}-${picked.month}-${picked.year}";
       });
     }
   }
@@ -43,7 +43,7 @@ class _expBodyState extends State<expBody> {
         lastDate: date);
     if (picked != null) {
       setState(() {
-        dateStringExp2 = "${picked.day}/${picked.month}/${picked.year}";
+        dateStringExp2 = "${picked.day}-${picked.month}-${picked.year}";
       });
     }
   }

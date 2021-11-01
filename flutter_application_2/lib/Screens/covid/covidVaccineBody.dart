@@ -30,7 +30,7 @@ class _covidVaccineBodyState extends State<covidVaccineBody> {
         lastDate: date);
     if (picked != null) {
       setState(() {
-        dateString1 = "${picked.day}/${picked.month}/${picked.year}";
+        dateString1 = "${picked.year}-${picked.month}-${picked.day}T11:31:32.157";
       });
     }
   }
@@ -43,7 +43,7 @@ class _covidVaccineBodyState extends State<covidVaccineBody> {
         lastDate: date);
     if (picked != null) {
       setState(() {
-        dateString2 = "${picked.day}/${picked.month}/${picked.year}";
+        dateString2 = "${picked.year}-${picked.month}-${picked.day}T11:31:32.157";
       });
     }
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:job/Screens/applied/appliedBody.dart';
+import 'package:job/Screens/login/login.dart';
 import 'package:job/Screens/profile/profile.dart';
 import 'package:job/constants.dart';
 import 'package:job/models/data.dart';
@@ -36,7 +37,7 @@ class _ApplicationsState extends State<Applications> {
         centerTitle: true,
       ),
       body: appliedBody(),
-      bottomNavigationBar: bottombar(),
+      bottomNavigationBar: bottombar(username: username1,),
     );
   }
 }

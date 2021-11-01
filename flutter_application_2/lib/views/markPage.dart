@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:job/Screens/login/login.dart';
 import 'package:job/constants.dart';
 import 'package:job/models/data1.dart';
 import 'package:job/provider/company_provider.dart';
+
 import 'package:job/views/home.dart';
 import 'package:job/Screens/profile/profile.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -37,62 +39,61 @@ class _markPageState extends State<markPage> {
         centerTitle: true,
       ),
       body: Container(
-        child: FutureBuilder<List<Job>>(
+    child: FutureBuilder<List<Job>>(
     future: fetchCompanys(),
     builder: (BuildContext context, AsyncSnapshot<List<Job>> snapshot) {
-    if (snapshot.hasError) {
-    print('Lỗi này nè: ' + snapshot.error.toString());
-    }
-    if(snapshot.hasData){
-      return Container(
+      var company = snapshot.data![0];
+      if (snapshot.hasError) {
+        print('Lỗi này nè: ' + snapshot.error.toString());
+      }
+      if (snapshot.hasData) {
+        return Container(
           margin: EdgeInsets.only(left: 18.0),
-      child: SingleChildScrollView(
-      child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-      SizedBox(height: 10.0),
-      Text(
-      "Các công việc đã lưu",
-      style: kTitleStyle,
-      ),
-      ListView.builder(
-      itemCount: snapshot.data!.length,
-      scrollDirection: Axis.vertical,
-      shrinkWrap: true,
-      physics: ScrollPhysics(),
-      itemBuilder: (context, index) {
-      var recent = snapshot.data![index];
-      return InkWell(
-      onTap: () {
-      Navigator.push(
-      context,
-      MaterialPageRoute(
-      builder: (context) => JobDetail(
-      company: recent,
-      ),
-      ),
-      );
-      },
-      child: RecentMark(company: recent),
-      );
-      },
-      ),
-      ],
-      ),
-      ),
-
-      );}
-
-    else{
-    return Center(
-    child: CircularProgressIndicator(),
-    );
-    }
-
-
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(height: 10.0),
+                Text(
+                  "Các công việc đã lưu",
+                  style: kTitleStyle,
+                ),
+                ListView.builder(
+                  itemCount: snapshot.data!.length,
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  physics: ScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    var recent = snapshot.data![index];
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                JobDetail(
+                                  company: recent,
+                                ),
+                          ),
+                        );
+                      },
+                      child: RecentMark(company: recent),
+                    );
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      }else{
+        return Center(
+          child: CircularProgressIndicator(),
+        );
+      }
     }),
-    ),
-      bottomNavigationBar: bottombar(),
+      ),
+      bottomNavigationBar: bottombar(username: username1,),
     );
+
   }
 }

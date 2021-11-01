@@ -6,7 +6,19 @@ import 'package:job/views/home.dart';
 import 'package:job/views/markPage.dart';
 import 'package:job/views/searchpage.dart';
 
-class bottombar extends StatelessWidget {
+class bottombar extends StatefulWidget {
+  final String username;
+  const bottombar({Key? key, required this.username}) : super(key: key);
+
+  @override
+  _bottombarState createState() => _bottombarState(this.username);
+}
+
+class _bottombarState extends State<bottombar> {
+
+  String username;
+  _bottombarState(this.username);
+
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
@@ -20,7 +32,7 @@ class bottombar extends StatelessWidget {
               tooltip: 'Home',
               onPressed: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Home()));
+                    context, MaterialPageRoute(builder: (context) => Home(username: this.username,)));
               },
             ),
           ),
@@ -50,7 +62,7 @@ class bottombar extends StatelessWidget {
               tooltip: 'Account',
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ProfileScreen()));
+                    MaterialPageRoute(builder: (context) => ProfileScreen(username: this.username,)));
               },
             ),
           ),
@@ -59,3 +71,4 @@ class bottombar extends StatelessWidget {
     );
   }
 }
+

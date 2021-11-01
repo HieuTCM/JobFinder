@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:job/Screens/login/login.dart';
 import 'package:job/constants.dart';
 import 'package:job/main.dart';
 import 'package:job/models/typeJob.dart';
@@ -212,7 +213,7 @@ class _mngSearchState extends State<mngSearch> {
           ),
         ),
       ),
-      bottomNavigationBar: bottombar(),
+      bottomNavigationBar: bottombar(username: username1),
     );
   }
 

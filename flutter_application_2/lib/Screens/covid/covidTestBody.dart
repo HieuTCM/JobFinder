@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:job/constants.dart';
 
-late int valueTestOption = 1;
-late int valueTestResult = 1;
+late var valueTestOption = 1;
+late var valueTestResult = 1;
 late bool valueCamket = false;
 String dateString = "";
 
@@ -36,7 +36,7 @@ class _covidTestBodyState extends State<covidTestBody> {
         lastDate: date);
     if (picked != null) {
       setState(() {
-        dateString = "${picked.day}/${picked.month}/${picked.year}";
+        dateString = "${picked.year}-${picked.month}-${picked.day}T11:10:20.591Z";
       });
     }
   }

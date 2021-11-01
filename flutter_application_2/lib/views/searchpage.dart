@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job/Screens/login/login.dart';
 import 'package:job/constants.dart';
 import 'package:job/models/data1.dart';
 import 'package:job/provider/company_provider.dart';
@@ -16,6 +17,22 @@ class searchPage extends StatefulWidget {
 }
 
 class _searchPageState extends State<searchPage> {
+  Job? compaby;
+  List<Job> job= <Job>[];
+  List<Job> jobDisplay= <Job>[];
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    fetchCompanys().then((value){
+      setState(() {
+        job.addAll(value);
+        jobDisplay = job;
+      });
+    });
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,168 +52,66 @@ class _searchPageState extends State<searchPage> {
         ),
         centerTitle: true,
       ),
-      body: Container(
-        child: FutureBuilder<List<Job>>(
-          future: fetchCompanys(),
-          builder: (BuildContext context, AsyncSnapshot<List<Job>> snapshot) {
-            if (snapshot.hasError) {
-              print('Lỗi này nè: ' + snapshot.error.toString());
-            }
-            if (snapshot.hasData) {
-              return Container(
-                  margin: EdgeInsets.only(left: 18.0),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        SizedBox(height: 10.0),
-                        Text(
-                          'Tên công việc',
-                          style: kTitleStyle,
-                        ),
-                        SizedBox(height: 10.0),
-                        Container(
-                          width: double.infinity,
-                          height: 50.0,
-                          margin: EdgeInsets.only(right: 18.0),
-                          child: Row(
-                            children: <Widget>[
-                              Expanded(
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 15.0),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                  ),
-                                  child: TextField(
-                                    cursorColor: kBlack,
-                                    decoration: InputDecoration(
-                                      border: InputBorder.none,
-                                      hintText: "Nhập tên công việc",
-                                      hintStyle: kSubtitleStyle.copyWith(
-                                        color: Colors.black38,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          'Chọn ngành nghề',
-                          style: kTitleStyle,
-                        ),
-                        SizedBox(height: 10.0),
-                        Container(
-                          margin: EdgeInsets.only(left: 18.0),
-                          child: DropdownButtonHideUnderline(
-                            child: DropdownButton<String>(
-                              iconSize: 36,
-                              icon: Icon(
-                                Icons.arrow_drop_down,
-                                color: kBlack,
-                              ),
-                              value: job,
-                              isExpanded: true,
-                              items: jobs.map(bulidMenuJob).toList(),
-                              onChanged: (job) =>
-                                  setState(() {
-                                    this.job = job;
-                                  }),
-                            ),
-                          ),
-                        ),
-                        Divider(
-                          height: 5,
-                          thickness: 2,
-                        ),
-                        SizedBox(height: 18.0),
-                        Container(
-                          margin: EdgeInsets.only(left: 70.0),
-                          width: 250,
-                          child: SizedBox(
-                            height: 35.0,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => searchPage()));
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: kBlack,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12.0),
-                                ),
-                              ),
-                              child: Text(
-                                "Tìm kiếm",
-                                style: kTitleStyle.copyWith(
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          "Danh sách công việc",
-                          style: kTitleStyle,
-                        ),
-                        ListView.builder(
-                          itemCount: snapshot.data!.length,
-                          scrollDirection: Axis.vertical,
-                          shrinkWrap: true,
-                          physics: ScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            var recent = snapshot.data![index];
-                            return InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        JobDetail(
-                                          company: recent,
-                                        ),
-                                  ),
-                                );
-                              },
-                              child: RecentJobCard(company: recent),
-                            );
-                          },
-                        ),
-                      ],
-                    ),
-                  ));
-            } else {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-          }),
+      body: ListView.builder(
+          itemCount: jobDisplay.length + 1,
+          itemBuilder: (BuildContext context,int index){
+            return index == 0 ? searchBar() : listItem(index-1);
 
+          }
       ),
-      bottomNavigationBar: bottombar(),
+      bottomNavigationBar: bottombar(username: username1,),
     );
   }
 
-  final jobs = [
-    'Bán hàng - Kinh doanh',
-    'Du lịch - Vận tải',
-    'Tiếp thị - Quảng cáo',
-    'Tư vấn',
-    'CNTT - Phần mềm',
-    'Giáo dục - Đào tạo',
-  ];
-  String? job;
-  DropdownMenuItem<String> bulidMenuJob(String job) => DropdownMenuItem(
-      value: job,
-      child: Text(
-        job,
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-      ));
+  searchBar(){
+    return Padding(
+      padding: EdgeInsets.all(8),
+      child: TextField(
+      decoration: InputDecoration(
+      hintText: 'Tên công việc'
+      ),
+      onChanged: (text){
+        text = text.toLowerCase();
+        setState(() {
+          jobDisplay = job.where((job){
+            var jobName = job.jobName.toLowerCase();
+            return jobName.contains(text);
+          }).toList();
+        });
+      },
+    ),
+    );
+  }
+
+  listItem(index){
+    return Card(
+      elevation: 0.0,
+      margin: EdgeInsets.only(right: 18.0, top: 15.0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      child: ListTile(
+        leading: Container(
+          width: 50.0,
+          height: 50.0,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12.0),
+            image: DecorationImage(
+              image: AssetImage("assets/" + jobDisplay[index].image),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        title: Text(jobDisplay[index].jobName, style: kTitleStyle),
+        subtitle: Text(
+          "${jobDisplay[index].mainCriteria} • ${jobDisplay[index].sallary} \n  ${jobDisplay[index].city}",
+        ),
+        trailing: Icon(
+          Icons.more_vert,
+          color: kBlack,
+        ),
+      ),
+    );
+  }
+
 }

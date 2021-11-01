@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job/Screens/login/login.dart';
 import 'package:job/Screens/profile/profile.dart';
 import 'package:job/models/notify_model.dart';
 import 'package:job/views/home.dart';
@@ -70,7 +71,7 @@ class NotifyDetail extends StatelessWidget {
               ],
             ),
           )),
-      bottomNavigationBar: bottombar(),
+      bottomNavigationBar: bottombar(username: username1,),
     );
   }
 }

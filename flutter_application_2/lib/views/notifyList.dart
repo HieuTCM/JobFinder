@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job/Screens/login/login.dart';
 import 'package:job/Screens/profile/profile.dart';
 import 'package:job/models/notify_model.dart';
 import 'package:job/views/home.dart';
@@ -9,6 +10,8 @@ import 'package:job/widgets/bottomAppbar.dart';
 
 class NotifyList extends StatelessWidget {
   final List<Notify> list = notifyList;
+
+  get username => null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +64,7 @@ class NotifyList extends StatelessWidget {
           return Divider();
         },
       ),
-      bottomNavigationBar: bottombar(),
+      bottomNavigationBar: bottombar(username: username1,),
     );
   }
 }

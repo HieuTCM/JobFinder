@@ -2,7 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:job/Screens/login/login.dart';
 import 'package:job/components/background.dart';
+import 'package:job/models/user.dart';
+import 'package:job/provider/FindJob_Provider.dart';
 import 'package:job/views/home.dart';
+
+final _nameCon = TextEditingController();
+final _usenameCon = TextEditingController();
+final _phoneCon = TextEditingController();
+final _passCon = TextEditingController();
+final _repassCon = TextEditingController();
+
 
 class RegisterScreen extends StatelessWidget {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -38,6 +47,7 @@ class RegisterScreen extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 40),
                   child: TextFormField(
                     decoration: InputDecoration(labelText: "Họ và tên *"),
+                    controller: _nameCon,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Vui lòng không được để trống";
@@ -54,6 +64,7 @@ class RegisterScreen extends StatelessWidget {
                   child: TextFormField(
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(labelText: "Số điện thoại *"),
+                    controller: _phoneCon,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Vui lòng không được để trống";
@@ -69,6 +80,7 @@ class RegisterScreen extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 40),
                   child: TextFormField(
                     decoration: InputDecoration(labelText: "Tên tài khoản *"),
+                    controller: _usenameCon,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Vui lòng không được để trống";
@@ -84,6 +96,7 @@ class RegisterScreen extends StatelessWidget {
                   margin: EdgeInsets.symmetric(horizontal: 40),
                   child: TextFormField(
                     decoration: InputDecoration(labelText: "Mật khẩu *"),
+                    controller: _passCon,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Vui lòng không được để trống";
@@ -101,6 +114,7 @@ class RegisterScreen extends StatelessWidget {
                   child: TextFormField(
                     decoration:
                         InputDecoration(labelText: "Nhập lại mật khẩu *"),
+                    controller: _repassCon,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Vui lòng không được để trống";
@@ -118,8 +132,18 @@ class RegisterScreen extends StatelessWidget {
                   child: RaisedButton(
                     onPressed: () {
                       if (formKey.currentState!.validate()) {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Home()));
+                        String password='';
+                        if(_passCon.text.compareTo(_repassCon.text)==true){
+                          password=_passCon.text;
+                        }
+                        User user=new User(id: 0,fullname: _nameCon.text,address: 'vui long nhap dia chi', gender: true, age: 0,
+                            phonenumber: 0, email: 'vui long nhap email', userName: _usenameCon.text, password: password);
+                        Future<String> result=FindJobProvider.createUser(user);
+                        result.then((value){
+                          print(value);
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Home(username: _usenameCon.text,)));
+                        });
                       } else {}
                     },
                     shape: RoundedRectangleBorder(

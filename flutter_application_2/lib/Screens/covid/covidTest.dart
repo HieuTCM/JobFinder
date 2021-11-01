@@ -2,10 +2,20 @@
 
 import 'package:flutter/material.dart';
 import 'package:job/Screens/covid/covidTestBody.dart';
+import 'package:job/Screens/profile/editProfileMenu.dart';
 import 'package:job/Screens/profile/editprofile.dart';
 import 'package:job/constants.dart';
+import 'package:job/models/CovidTestPaper.dart';
+import 'package:job/provider/FindJob_Provider.dart';
 
-class covidTest extends StatelessWidget {
+class covidTest extends StatefulWidget {
+  const covidTest({Key? key}) : super(key: key);
+
+  @override
+  _covidTestState createState() => _covidTestState();
+}
+
+class _covidTestState extends State<covidTest> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,15 +39,32 @@ class covidTest extends StatelessWidget {
       bottomNavigationBar: BottomAppBar(
         child: RaisedButton(
           onPressed: () {
-            print(valueTestOption);
-            print(valueTestResult);
-            print(valueCamket);
-            print(dateString);
+            String testType="";
+            String testResult;
+            int id=sizeTestPaper;
             // Navigator.push(context,
             //     MaterialPageRoute(builder: (context) => EditProfile()));
+            valueTestOption == 1 ? testType="Xét nghiệm PCR"
+                : valueTestOption == 2 ? testType="Test nhanh bởi chuyên viên y tế"
+                : valueTestOption == 3 ? testType="Test nhanh tự làm" : testResult="";
+
+            valueTestResult == 1 ? testResult="Âm tính"
+                : valueTestResult == 2 ? testResult="Dương tính" : testResult="";
+            print("date nè "+dateString);
+            CovidTestPaper testPaper= new CovidTestPaper(id: id,
+                          testType: testType,
+                          testResult: testResult,
+                          date: dateString,
+                          image: 'lalal',
+                          userId: userId);
+            Future<String> result=FindJobProvider.createCovidTestPaper(testPaper);
+            result.then((value){
+              print(value);
+              Navigator.pop(context);
+            });
           },
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           textColor: Colors.white,
           padding: const EdgeInsets.all(0),
           child: Container(
@@ -61,3 +88,4 @@ class covidTest extends StatelessWidget {
     );
   }
 }
+
